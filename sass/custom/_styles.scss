@@ -1,0 +1,104 @@
+/* nice sticky footer, from http://getbootstrap.com/examples/sticky-footer/ */
+html, body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+footer[role=contentinfo] {
+    height: 60px;
+}
+
+#content {
+  margin-top: 20px;
+}
+
+/* General positioning stuff */
+.left { float: left; }
+.right { float: right; }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Use a nicer font on the headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+/* Put a little more space around headers */
+.page-header {
+  margin-top: 10px;
+  .entry-title {
+    margin-top: 0.4em;
+  }
+}
+
+/* Make links a little darker */
+a {
+  color: #139077;
+}
+
+/* Layouts for images and figures / images with captions */
+figure img {
+  margin-bottom: 5px;
+}
+figure.center {
+  display: table;
+  text-align: center;
+}
+figcaption {
+  display: block;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+.page-content {
+  img, figure {
+    border-radius: 2px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+/* No formatting for sidebar ULs */
+.sidebar {
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+/* Pretty-up the Pinboard output */
+#pinboard_linkroll {
+  .pin-title {
+    font-weight: bold;
+  }
+  .pin-description {
+    display: block;
+  }
+  .pin-tag {
+    display: none;
+  }
+}
+
+/* Put a little space between post meta stuff at the end of the post */
+p.meta {
+  .glyphicon {
+    margin-left: 25px;
+  }
+  span:first-child {
+    margin-left: 0;
+  }
+}

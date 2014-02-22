@@ -1,0 +1,16 @@
+*~
+\#*\#
+*.old
+.bundle
+.DS_Store
+.sass-cache
+.gist-cache
+.pygments-cache
+_deploy
+bin
+public
+secrets.rb
+source/_stash
+source/stylesheets/screen.css
+vendor
+node_modules
