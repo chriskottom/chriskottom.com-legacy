@@ -38,6 +38,16 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+/* Make post titles stand out */
+h1 {
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+/* Size down the post titles on the archive pages */
+#blog-archives h1 {
+  font-size: 32px;
+}
+
 /* Put a little more space around headers */
 .page-header {
   margin-top: 10px;
