@@ -1,42 +1,43 @@
 ---
-layout: default
-navbar: Blog
+layout: homepage
+body_id: home
 ---
-
-<div class="row">
-  <div class="page-content {% unless site.default_asides == empty and site.blog_index_asides == empty %}col-md-9{% else %}col-md-12{% endunless %}">
-    <div class="blog-index">
-      {% assign index = true %}
-      {% for post in paginator.posts %}
-      {% assign content = post.content %}
-        <article class="post">
-          {% include article.html %}
-        </article>
-      {% endfor %}
+<div class="hero">
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Chris Said So</h1>
+      <p class="lead">I'm a <em>father</em>, a <em>husband</em>, a <em>hacker</em>, and an intermediate-level human being.  I live in <em>Prague</em> with my wife and two troublemaking kids.</p>
     </div>
-
-    <ul class="pager">
-      {% if paginator.next_page %}
-        <li class="previous"><a href="{{paginator.next_page}}">&larr;&nbsp;Older</a></li>
-      {% else %}
-        <li class="previous disabled"><a href="#">&larr;&nbsp;Older</a></li>
-      {% endif %}
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      {% if paginator.previous_page %}
-        <li class="next"><a href="{{paginator.previous_page}}">Newer&nbsp;&rarr;</a></li>
-      {% else %}
-        <li class="next disabled"><a href="#">Newer&nbsp;&rarr;</a></li>
-      {% endif %}
-    </ul>
   </div>
+</div>
 
-  {% unless site.default_asides == empty and site.blog_index_asides == empty %}
-    <aside class="sidebar col-md-3">
-      {% if site.blog_index_asides.size %}
-        {% include_array blog_index_asides %}
-      {% else %}
-        {% include_array default_asides %}
-      {% endif %}
-    </aside>
-  {% endunless %}
+<div id="main" class="container">
+  <div id="content">
+    <div class="row">
+      <div id="about">
+	<h2>A Little About Me</h2>
+	<p>Life is where you find it.  I've lived in the <em>Czech Republic</em> since the year 2000.  When I moved to work with a long-gone startup, I told everyone I would be here <em>"for a year or two"</em>.</p>
+	<p>I've spent a good chunk of the past 20 years hunched over a keyboard working on <em>system architecture &amp; design</em> and <em>web applications</em> - most recently using <em>Ruby on Rails</em> and <em>JavaScript</em>.</p>
+	<p><a href="mailto:chris@chriskottom.com">Email me</a></p>
+      </div>
+
+      <div id="blog">
+	<h2>From The Blog</h2>
+	{% for post in site.posts limit:4 reverse %}
+	<article class="page-header">
+	  <h3><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></h3>
+	  <p class="meta text-muted">
+	    <time datetime="{{ post.date | datetime | date_to_xmlschema }}">{{ post.date_formatted }}</time>
+	  </p>
+	</article>
+	{% endfor %}
+	<p><a class="btn btn-primary" href="/blog" role="button">Check out more &raquo;</a></p>
+      </div>
+
+      <div id="recent-work">
+	<h2>Recently Working On</h2>
+	<p>Website renovations.  I've been trying to get back into a regular writing practice this year, and so redesigning my blog and personal homepage has been an attempt at having a vehicle for doing so.</p>
+      </div>
+    </div>
+  </div>
 </div>

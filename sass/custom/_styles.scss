@@ -163,3 +163,54 @@ p.meta {
     }
   }
 }
+
+/* Formatting for the home page */
+body#home {
+  em {
+    color: #0c5f4e;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  .hero {
+    background-clip: border-box;
+    background-image: url('/images/homepage_background.jpg');
+    background-position: 0 -80px;
+    background-repeat: none;
+    background-size: cover;
+
+    .jumbotron {
+      background-color: rgba(255, 255, 255, 0.4);
+      margin: 75px auto;
+    }
+
+    .lead {
+      font-size: 24px;
+    }
+  }
+
+  #about, #blog, #recent-work {
+    @extend .col-lg-4;
+    font-size: 18px;
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .page-header {
+      border: 0;
+      margin: 0 0 15px;
+      padding: 0;
+    }
+
+    p.meta {
+      font-size: 16px;
+    }
+  }
+}
