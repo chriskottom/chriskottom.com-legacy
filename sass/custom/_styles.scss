@@ -35,7 +35,7 @@ footer[role=contentinfo] {
 /* Use a nicer font on the headers */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 /* Make post titles stand out */
@@ -194,12 +194,13 @@ body#home {
     font-size: 18px;
 
     h2 {
+      font-weight: 500;
       margin-bottom: 24px;
     }
 
     h3 {
       font-size: 18px;
-      font-weight: bold;
+      font-weight: 500;
       margin: 0;
     }
 
