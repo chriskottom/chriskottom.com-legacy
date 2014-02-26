@@ -215,3 +215,14 @@ body#home {
     }
   }
 }
+
+/* Tweak the blog-index listing */
+.blog-index {
+  .post {
+    margin-bottom: 2.5em;
+
+    footer {
+      margin-top: 1em;
+    }
+  }
+}
