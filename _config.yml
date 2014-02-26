@@ -87,7 +87,7 @@ pinboard_user: ck1
 pinboard_count: 3
 
 # Disqus Comments
-disqus_short_name: yoursite
+disqus_short_name: chriskottom
 disqus_show_comment_count: false
 
 # Google Analytics
