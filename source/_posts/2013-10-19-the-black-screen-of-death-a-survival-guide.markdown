@@ -3,7 +3,7 @@ layout: post
 title: "The Black Screen of Death: A Survival Guide"
 date: 2013-10-19 12:12
 comments: true
-categories: NVIDIA, Ubuntu, black screen, tech, upgrade
+categories: [NVIDIA, Ubuntu, 'black screen', tech, upgrade]
 ---
 Ubuntu upgrades are always nice because they combine two things everyone loves: *new* and *free*. It's like geek Christmas if Christmas came twice a year and was mostly about unusual stocking stuffers and only the occasional big-ticket present.
 

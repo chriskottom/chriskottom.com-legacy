@@ -3,7 +3,7 @@ layout: post
 title: Static Website Deployment with Capistrano
 date: 2013-09-11 11:11
 comments: true
-categories: Capistrano, Ruby, deployment, development, static website
+categories: [Capistrano, Ruby, deployment, development, 'static website']
 ---
 Back in the day, deploying a new version of a website usually involved a combination of tools including `rsync` or `scp` (or insecure-as-hell-even-back-then `ftp`) to copy your files to the target server, `ssh` to change configuration files or fix something you broke during the copy, and all too often a nervous tool of a boss standing over your shoulder checking on how things were going. All this on the production web server, I might add. Seems pretty barbaric by today's standards.
 
