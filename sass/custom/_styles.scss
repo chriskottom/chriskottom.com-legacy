@@ -40,7 +40,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Make post titles stand out */
 h1 {
+  font-size: 38px;
   text-shadow: 1px 1px 1px #ccc;
+
+  a {
+    color: #2c3e50;
+  }
+
+  a:hover {
+    color: #139077;
+    text-decoration: none;
+  }
 }
 
 /* Size down the post titles on the archive pages */
