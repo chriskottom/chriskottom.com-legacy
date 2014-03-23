@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Next Up: BetterFBO"
+title: "New Project: BetterFBO"
 date: 2014-03-22 15:50:35 +0100
 comments: true
 categories: [ BetterFBO, business, startups ]
