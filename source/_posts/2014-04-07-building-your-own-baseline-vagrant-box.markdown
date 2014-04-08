@@ -45,7 +45,7 @@ For help on any individual command run `vagrant COMMAND -h`
 Next, you'll need to install a [Vagrant][1] box to serve as the starting point for your own.  These can be found at the old [Vagrantbox.es][6], which is a public directory of privately hosted boxes, or the new [VagrantCloud][7], which is currently in beta and looks like it will be a box hosting service using a free-paid hybrid business model similar to [GitHub][8].  I generally use Ubuntu Server for production deployments, so I'm starting with a the most recent long-term support (LTS) version of that which happens to be 12.04 Precise Pangolin.  In order to save myself some time, I created a base box with a baseline set of software packages installed and configured to save myself time during provisioning and called it `chriskottom-precise64.box` and added it to [Vagrant][1] with the command:
 
 {% codeblock lang:bash %}
-vagrant box add --name precise64 http://files.vagrantup.com/precise64.box
+vagrant box add precise64 http://files.vagrantup.com/precise64.box
 {% endcodeblock %}
 
 ## Step 3: Set Up Bundler ##
@@ -88,7 +88,7 @@ cookbooks/chriskottom_precise64
     └── default
 {% endcodeblock %}
 
-For the purposes of this exercise, we only retain two files, `metadata.rb` and `recipes/default.rb`, and the `attributes/` directory, so you can delete everything else.
+For the purposes of this exercise, we only retain three files - `metadata.rb`, `README.md`, and `recipes/default.rb` - and the `attributes/` directory, so you can delete everything else.
 
 In `attributes/` you'll want to create a file called `default.rb` and use it to define the array of package names you want to install.  This is what my list looks like:
 
