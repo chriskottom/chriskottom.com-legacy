@@ -94,9 +94,12 @@ In `attributes/` you'll want to create a file called `default.rb` and use it to 
 
 {% codeblock lang:ruby cookbooks/chriskottom_precise64/attributes/default.rb %}
 default['chriskottom_precise64']['packages'] =
-  %w( make automake autoconf gcc build-essential xinetd sharutils
-      git-core curl wget htop tree chkconfig traceroute sysstat
-      iptraf nmap ngrep ack iotop iftop ntp emacs23-nox )
+  %w( make automake autoconf gcc build-essential xinetd sharutils git-core
+      wget htop tree chkconfig traceroute sysstat iptraf nmap ngrep ack iotop
+      iftop ntp emacs23-nox sqlite3 openssl libsqlite3-dev libxml2-dev
+      libxslt-dev libreadline-dev zlib1g zlib1g-dev libssl-dev libc6-dev
+      libyaml-dev libcurl4-openssl-dev ncurses-dev libncurses5-dev libgdbm-dev
+      libffi-dev libtool bison )
 {% endcodeblock %}
 
 Then we only need to set up the default recipe to install all the packages on the list:
@@ -142,17 +145,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe 'apt'
+    chef.add_recipe 'chriskottom_precise64'
     chef.add_recipe 'ruby_build'
     chef.add_recipe 'rbenv::system'
     chef.add_recipe 'rbenv::vagrant'
-    chef.add_recipe 'chriskottom_precise64'  
     chef.json = {
       rbenv: {
-        global: '2.1.1',
-        rubies: [ '2.1.1' ],
+        global: '2.1.0',
+        rubies: [ '2.1.0' ],
         upgrade: true,
         gems: {
-          '2.1.1' => [{ name: 'bundler' },
+          '2.1.0' => [{ name: 'bundler' },
                       { name: 'main' },
                       { name: 'map' },
                       { name: 'open4' },
@@ -174,6 +177,8 @@ Let's look at what I've done here:
 3. I indicate that I want to use the `:chef-solo` provisioner when setting up the VM.
 4. I specify a list of [Chef][3] recipes that should be executed, in order, on the newly created VM.
 5. I provide a Hash of parameters that the recipes will need to do their work.
+
+(**Note:** Yes, I'm aware that Ruby 2.1.1 has been released, but some combination of Ubuntu Precise, the libraries that are installed, and Ruby 2.1.1 seems to make Nokogiri compilation choke.  Downgrading Ruby to 2.1.0 seemed to solve the problem.) 
 
 ## Step 6: Vagrant UP! ##
 It's time to light this thing up with `vagrant up`.
