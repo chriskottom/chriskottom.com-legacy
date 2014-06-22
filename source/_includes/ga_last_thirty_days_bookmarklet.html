@@ -1,0 +1,63 @@
+<div id="ga-bookmarklet-tool" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Google Analytics N-days Bookmarklet</h3>
+  </div>
+
+  <div class="panel-body">
+    <form class="form form-horizontal" action="#">
+      <!-- GA identifier input-->
+      <div class="form-group">
+	<label class="col-md-3 control-label" for="ga-id">GA property identifier</label>
+	<div class="col-md-9">
+          <input id="ga-id" name="ga-id" type="text" class="form-control">
+	</div>
+      </div>
+
+      <!-- Link text input-->
+      <div class="form-group">
+	<label class="col-md-3 control-label" for="text">Anchor text</label>
+	<div class="col-md-9">
+          <input id="text" name="text" type="text" class="form-control">
+	</div>
+      </div>
+
+      <!-- Days input -->
+      <div class="form-group">
+	<label class="col-md-3 control-label" for="days">Number of days</label>
+	<div class="col-md-9">
+          <input id="days" name="days" type="text" class="form-control" value="30">
+	</div>
+      </div>
+
+      <!-- Form actions -->
+      <div class="form-group">
+	<div class="col-md-3 text-right" style="margin-top:10px">
+	  <b>Your bookmarklet</b>
+	</div>
+	<div id="bookmarklet" class="col-md-6" style="margin-top:10px"></div>
+	<div class="col-md-3 text-right">
+          <button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+    $("#ga-bookmarklet-tool form").submit(function (event) {
+        // Don't execute default behavior
+        event.preventDefault();
+		
+	// Grab form input data
+        var gaIdentifier = $("input#ga-id").val();
+        var anchorText = $("input#text").val();
+        var numberOfDays = $("input#days").val();
+
+        // Write a function to create and open the correct URL
+        var url = "javascript:(function(){var id=\""+gaIdentifier + "\";function twoDigitize(a){a=String(a);a.length<2&&(a=\"0\"+a);return a}var c=new Date,b=\"\";b+=c.getFullYear();b+=twoDigitize(c.getMonth()+1);b+=twoDigitize(c.getDate());var f=new Date(c-(1000*60*60*24*" + numberOfDays + ")),e=\"\";e+=f.getFullYear();e+=twoDigitize(f.getMonth()+1);e+=twoDigitize(f.getDate());location.href=\"https://www.google.com/analytics/web/?#report/visitors-overview/\"+id+\"/%3F_u.date00%3D\"+e+\"%26_u.date01%3D\"+b+\"/=\";})();";
+		
+	// Drop in the new bookmarklet / link
+    	var target = $("#ga-bookmarklet-tool #bookmarklet");
+        target.html("<a href='" + url + "'>" + anchorText + "</a>");
+    });
+</script>
