@@ -35,6 +35,7 @@
 	<input type="text" name="b_cb97c3f32295c9480bdb216ad_9b52a32f47" tabindex="-1" value="">
       </div>
 
+      <input type="hidden" name="MINITEST" id="MINITEST" value="yes" />
       <input type="hidden" name="SOURCE" id="SOURCE" value="chriskottom.com" />
       <input type="hidden" name="RESNAME" id="RESNAME" value="{{ page.title }}" />
       <input type="hidden" name="RESLOC" id="RESLOC" value="{{ site.url }}{{ page.url }}" />
@@ -58,10 +59,14 @@
 	ftypes[0]='email';
 	fnames[1]='FNAME';
 	ftypes[1]='text';
-	fnames[2]='CHANNEL';
+	fnames[2]='MINITEST;
 	ftypes[2]='text';
-	fnames[3]='POST';
+	fnames[3]='SOURCE;
 	ftypes[3]='text';
+	fnames[4]='RESNAME;
+	ftypes[4]='text';
+	fnames[5]='RESLOC;
+	ftypes[5]='text';
     }(jQuery));
     var $mcj = jQuery.noConflict(true);
   </script>
