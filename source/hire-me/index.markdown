@@ -19,7 +19,7 @@ I'm an experienced, inventive professional available to help you solve the thorn
 * Application usability and user experience
 * Project management and business consulting
 
-As an American living for the past 15 years in Prague, Czech Republic, I've worked with companies in over a dozen countries worldwide.
+As an American living for the past 15 years in Prague, Czech Republic, I work to help customers around the world.  In the past five years, I've worked on projects for companies in over a dozen countries.
 
 ---
 
