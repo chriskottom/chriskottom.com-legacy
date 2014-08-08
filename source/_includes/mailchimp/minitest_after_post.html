@@ -2,22 +2,21 @@
 
   <!-- Begin MailChimp Signup Form -->
   <div id="mc_embed_signup">
+    <h2>Like what you just read?</h2>
+
+    <p>
+      I'm working on a new project, <b>The Minitest Cookbook</b>, that will teach you
+      to turn little ol' Minitest into a lean, mean, fully-customized testing toolchain.
+      Sign up below to receive updates.
+    </p>
+
     <form action="//chriskottom.us7.list-manage.com/subscribe/post?u=cb97c3f32295c9480bdb216ad&amp;id=9b52a32f47"
 	  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
 	  class="validate" target="_blank" novalidate>
-      <h2>Like what you just read?</h2>
-
-      <p>
-	I'm working on a new project, <b>The Minitest Cookbook</b>, that will teach you
-	to turn little ol' Minitest into a lean, mean, fully-customized testing toolchain.
-	Sign up below to receive updates.
-      </p>
-
       <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 
       <div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-	</label>
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label> 
 	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
       </div>
 
@@ -52,23 +51,37 @@
 
   <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
   <script type='text/javascript'>
-    (function($) {
-	window.fnames = new Array();
-	window.ftypes = new Array();
-	fnames[0]='EMAIL';
-	ftypes[0]='email';
-	fnames[1]='FNAME';
-	ftypes[1]='text';
-	fnames[2]='MINITEST;
-	ftypes[2]='text';
-	fnames[3]='SOURCE;
-	ftypes[3]='text';
-	fnames[4]='RESNAME;
-	ftypes[4]='text';
-	fnames[5]='RESLOC;
-	ftypes[5]='text';
-    }(jQuery));
-    var $mcj = jQuery.noConflict(true);
+   (function($) {
+     window.fnames = new Array();
+     window.ftypes = new Array();
+     fnames[0]='EMAIL';
+     ftypes[0]='email';
+     fnames[1]='FNAME';
+     ftypes[1]='text';
+     fnames[2]='MINITEST';
+     ftypes[2]='text';
+     fnames[3]='SOURCE';
+     ftypes[3]='text';
+     fnames[4]='RESNAME';
+     ftypes[4]='text';
+     fnames[5]='RESLOC';
+     ftypes[5]='text';
+   }(jQuery));
+   var $mcj = jQuery.noConflict(true);
+  </script>
+  <script type="text/javascript">
+   var email;
+
+   // Trigger GA event upon submission.
+   $(function() {
+     $('#mce-EMAIL').on('change', function() {
+       email = $('#mce-EMAIL').val();
+     });
+
+     $('#mc-embedded-subscribe-form #mce-success-response').bind('DOMSubtreeModified', function() {
+       _gaq.push(['_trackEvent', 'Mailing List', 'Subscribed Minitest', email]);
+     });
+   });
   </script>
   <!--End mc_embed_signup-->
 
