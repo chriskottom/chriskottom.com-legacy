@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why I Write Tests"
+title: "Why I Test"
 date: 2014-08-11 09:32:01 +0200
 comments: true
 categories: [development, testing, TDD]
