@@ -237,6 +237,11 @@ body#home {
   }
 }
 
+/* Minor adjustment to alignment of FB share component. */
+.fb-like {
+  vertical-align: top;
+}
+
 /* Mailchimp sign-up forms */
 .mailchimp.after-post {
   background: #ecf0f1;

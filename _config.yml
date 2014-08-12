@@ -101,3 +101,6 @@ facebook_user: chris.kottom
 
 # LinkedIn Profile
 linkedin_user: chriskottom
+
+# Hacker News Like
+hn_share_button: true

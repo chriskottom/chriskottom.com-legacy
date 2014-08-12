@@ -1,0 +1,13 @@
+{% if site.hn_share_button %}
+<!-- Begin HN button -->
+<a href="http://news.ycombinator.com/submit" class="hn-share-button" data-title="{{ page.title }}" data-url="{{ site.url }}{{ page.url }}">Vote on HN</a>
+<script>
+ (function(d, t) {
+   var g = d.createElement(t),
+   s = d.getElementsByTagName(t)[0];
+   g.src = '//hnbutton.appspot.com/static/hn.min.js';
+   s.parentNode.insertBefore(g, s);
+ }(document, 'script'));
+</script>
+<!-- End HN button -->
+{% endif %}
