@@ -4,6 +4,7 @@ title: "Customize Minitest Assertions and Expectations"
 date: 2014-08-06 09:52:54 +0200
 comments: true
 categories: [development, Ruby, Minitest, "Minitest::Spec", assertions, expectations, testing]
+featured: 100
 ---
 [Minitest][1] has grown its popularity by keeping things simple.  Out-of-the-box, it provides a lean and mean 19 assertions, and a lot of programmers find that to be more than sufficient for testing a wide range of code.  (I mean really, when was the last time you typed ```assert_predicate``` in a test?)  Sometimes though, you wouldn't mind writing in a language that maps more closely to your problem domain - whether it's to be more expressive in your tests or to check a number of conditions in one domain-specific assertion.  Rails provides some nice examples of this sort of thing in the way they extend ```Minitest::Test``` for some of the more common testing operations needed for web applications and templates, and you can do the same by building your own custom assertions or expectations (in case you're using Minitest Spec) that let you write tests more like you like them.  Remember: [Minitest][1] is just Ruby.<!--more-->
 

@@ -4,6 +4,7 @@ title: "A Few Modest Best Practices for Git"
 date: 2014-02-26 12:39:06 +0100
 comments: true
 categories: development git
+featured: 400
 ---
 {% img right /images/git-logo-two-color.png 500 Git logo  %}
 
