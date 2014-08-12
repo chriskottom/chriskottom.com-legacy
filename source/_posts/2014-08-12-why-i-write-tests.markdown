@@ -4,7 +4,6 @@ title: "Why I Write Tests"
 date: 2014-08-11 09:32:01 +0200
 comments: true
 categories: [development, testing, TDD]
-featured: 300
 ---
 If you're part of a community that considers writing automated tests an essential part of development and you yourself write automated tests for your code as a matter of routine, you might want to stretch out your neck a little before reading further.  Highly nod-along-able material awaits you along with maybe one or two things you find disagreeable or blasphemous.
 
@@ -64,6 +63,8 @@ Upgrading
 ## It's a signal of care and craft. ##
 
 As a person who makes software, I want the products of my work to be as good as they can possibly be.  That's an attitude that doesn't allow me to excuse myself from quality assurance with the claim that it's someone else's job or that I'm not paid to do that.  Automated testing is the most efficient way I know of to ensure that what I've built functions well right now and is ready for the next person to take and run with.  If you've read this far into the post, it's probably because you too care a great deal about the things you make too.  Writing and maintaining your tests, beyond all other practical considerations, is like a sign to others that the work and the time you spent doing it mattered to you.
+
+{% include mailchimp/minitest_after_post2.html %}
 
 [1]: https://en.wikipedia.org/wiki/Kent_Beck
 [2]: http://david.heinemeierhansson.com/
