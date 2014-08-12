@@ -1,0 +1,75 @@
+---
+layout: post
+title: "Why I Write Tests"
+date: 2014-08-11 09:32:01 +0200
+comments: true
+categories: [development, testing, TDD]
+featured: 300
+---
+If you're part of a community that considers writing automated tests an essential part of development and you yourself write automated tests for your code as a matter of routine, you might want to stretch out your neck a little before reading further.  Highly nod-along-able material awaits you along with maybe one or two things you find disagreeable or blasphemous.
+
+But maybe that's not you.  Maybe you're the kind to get bothered when TDD people start getting too precious talking about workflows and pooh-poohing the unbelieving masses.  Or maybe you've got practical reasons why you don't write tests - it takes too long or it's too difficult or you're paid to write code that benefits the customer, not the developer.  You're the one I want to talk to, because I've so been there.
+
+I don't consider myself either an [evangelist][1] or an [ideologue][2].  I write software, sometimes for a living, and my motivations for whether or not and how to write tests have been purely motivated by a desire to do that one thing better.  Over the years, I've tried a lot of different techniques and methodologies - from not testing at all to strict test-all-the-fucking-time TDD and many different shades in between - and I think I've finally arrived at something that helps me to produce better quality code and to hang on to what's left of my sanity - for now, at least.  Given the recent [debates][3] about the place of testing in software development, I thought it might be time to offer up one programmer's entirely unscientific, strictly observational rationale and notes for writing tests as a part of daily development.<!--more-->
+
+***
+
+## It forces me to review as I develop. ##
+
+At the start of a coding session, I open two windows in my editor - one with application code and the other with the corresponding test code, often side-by-side.  I usually write a few lines of application logic in the first window, and then switch and write a few lines of corresponding test logic.  Wash, rinse, repeat.  I don't call what I do *test-driven* because I don't want to be shouted at.  That is, I rarely write a test, watch it fail, and then fill in the logic to make it pass, but the interplay between the two windows makes the process work for me and drives development forward.  Think **test-while** as opposed to **test-first**.
+
+The thing that makes this back-and-forth effective is that I tend to work and focus differently depending on which side of the screen I'm working on.  When I'm working on application code, I'm definitely in problem-solving mode: making decisions about whether state should be exposed or hidden, choosing the best control-flow statement for a given situation, and so on.  When I switch over to the testing side, I consciously distance myself from the application code, taking a break from the monitor if necessary, and become more critical of the code I've written - yes, looking for boundary conditions and potential edge cases, but also checking myself to see whether the code is true to the business requirements.  Playing back and forth between the two sides keeps the loop between code and verification nice and tight while still letting me work in a way that feels comfortable.
+
+## Big problems are solved in small pieces. ##
+
+The volley between application code and tests moves at a brisk, regular pace, so I never have time to write long-ass methods or to get too far ahead of myself without building up a backlog of code that needs to be tested. I tend to work in bursts of no more than 10-15 lines of code before flipping the switch to look at what I've written and seeing if there's behavior that I can verify with a new test or by adding some assertions to an existing test, and when I do get a little carried away, there's always a price to be paid in a backlog of sometimes-incoherent code waiting to be tested.
+
+## Design is (occasionally) improved. ##
+
+Orthodox TDDers tout better designs as one of the major benefits of writing tests first - perhaps THE major benefit.  I haven't personally found that following a strict test-driven approach has improved or degraded the design of my code in any significant way most of the time, nor have I found that it produces code that's all that different than testing in parallel does.  I think that's because I spent a lot of time working on web applications, and with few exceptions, most of what I'm called upon to do just isn't all that complicated because so many of the things that are both difficult and common end up being codified in the frameworks we use.  I can see, however, some cases where a test-first workflow is the right tool for the job.
+
+Running TDD by the book puts the effects of your code front and center and makes the internal workings almost an afterthought.  (Actually, not even almost - you literally *think* about the code to implement the effect *after* you've written the test to verify it.)  And when you're approaching a problem where the requirements are clear but the path to implement them isn't, writing tests first and logic last can help me to decompose and "feel" my way through to a solution by focusing on the things I do know and keeping me from wandering off to explore what I don't.  It's not a way of working that' particularly comfortable for me, but in this narrow case, it produces a finished feature a lot more reliably than my usual workflow.
+
+## I can develop/refactor/upgrade with confidence. ##
+
+Code lives on long after it's written, and most cases if not all significant cases, it will carry the fingerprints of many different developers.  (We all agree that Future You is not the same developer as Today You, right?)  Having a defense against regression and new bugs sneaking into your application is, in my opinion, enough to justify the extra work of writing and maintaining an automated test suite on its own for a bunch of reasons.
+
+Further development
+: When a developer (Future You or otherwise) picks up your code for the
+  first time, being able to run the test suite and see the results gives an
+  indication of the overall state of things and where to begin investigation.
+  Failures or errors will be an immediate and obvious signal that something
+  is wrong and should be looked at more closely.
+Prevents regression
+: Tests are only ever going to be as effective as the developers who write them,
+  and there are plenty of different ways that bad tests can lead you astray.
+  That said though, running the full test suite once before checking in new code
+  (or having a CI system that does it for you) is an excellent defense against
+  introducing that special category of stupid new bugs that can be hard to spot
+  immediately and 
+Refactoring
+: You should be refactoring your code often because designs that emerge during
+  initial development are seldom optimal, and a comprehensive test suite lets
+  you approach the task with confidence that breakage will be both detectable
+  and fixable.  (When I say "comprehensive" I tend to mean a suite resembling
+  an [hourglass][4] rather than a [pyramid][5] or [ice cream cone][6].)
+Upgrading
+: As a [Rails][7] developer, I've gotten used to the ground under my feet moving
+  unpredictably and often.  A well maintained set of automated tests means that
+  I can keep up with changes to the framework, the [Ruby language][8], and all
+  of the various libraries and other infrastructure I rely on to build apps.
+  Running tests after upgrading is a quick sanity check that lets me know when
+  a dependency changes in a way that breaks my stack.
+
+## It's a signal of care and craft. ##
+
+As a person who makes software, I want the products of my work to be as good as they can possibly be.  That's an attitude that doesn't allow me to excuse myself from quality assurance with the claim that it's someone else's job or that I'm not paid to do that.  Automated testing is the most efficient way I know of to ensure that what I've built functions well right now and is ready for the next person to take and run with.  If you've read this far into the post, it's probably because you too care a great deal about the things you make too.  Writing and maintaining your tests, beyond all other practical considerations, is like a sign to others that the work and the time you spent doing it mattered to you.
+
+[1]: https://en.wikipedia.org/wiki/Kent_Beck
+[2]: http://david.heinemeierhansson.com/
+[3]: http://martinfowler.com/articles/is-tdd-dead/
+[4]: http://www.getautoma.com/blog/the-test-hourglass
+[5]: http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html
+[6]: http://martinfowler.com/bliki/TestPyramid.html
+[7]: http://rubyonrails.org/
+[8]: https://www.ruby-lang.org/en/
