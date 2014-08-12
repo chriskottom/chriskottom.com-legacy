@@ -237,6 +237,20 @@ body#home {
   }
 }
 
+/* Support for DL/DT/DD tags */
+dl {
+  margin-bottom: 10.5px;
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-bottom: 6px;
+  }
+}
+
+
 /* Minor adjustment to alignment of FB share component. */
 .fb-like {
   vertical-align: top;
