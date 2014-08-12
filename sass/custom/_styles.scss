@@ -287,6 +287,11 @@ dl {
 
     label {
       @extend .control-label;
+      font-size: 16px;
+    }
+
+    .mce_inline_error {
+      font-size: 16px;
     }
 
     input:not([type=submit]) {
