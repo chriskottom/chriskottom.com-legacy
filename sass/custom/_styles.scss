@@ -141,6 +141,14 @@ p.meta {
     transition:.3s;
   }
 
+  a.google-icon {
+    background-image: url('/images/googleplus-black.png');
+    &:hover {
+      background-color: #ff5555;
+      background-image: url('/images/googleplus.png');
+    }
+  }
+
   a.facebook-icon {
     background-image: url('/images/facebook-black.png');
     &:hover {
