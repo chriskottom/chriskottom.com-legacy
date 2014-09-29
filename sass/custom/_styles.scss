@@ -92,6 +92,12 @@ figcaption {
   }
 }
 
+/* Navigation styles */
+.nav li.featured a {
+  color: #ffffcc;
+  font-weight: bolder;
+}
+
 /* No formatting for sidebar ULs */
 .sidebar {
   ul {
