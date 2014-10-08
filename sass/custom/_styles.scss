@@ -360,3 +360,47 @@ dl {
   margin-top: 20px;
   text-align: center;
 }
+
+/* Results tables */
+table.results {
+  border: 3px solid #aaa;
+  margin: 20px auto;
+  width: 90%;
+
+  tr, td, th {
+    border: 1px solid #aaa;
+    padding: 7px;
+  }
+  tr th {
+    background-color: #f3f3f3;
+    text-align: center;
+  }
+  .left, .center, .right {
+    display: table-cell;
+    float: none;
+  }
+  .left {
+    text-align: left;
+  }
+  .center {
+    text-align: center;
+  }
+  .right {
+    text-align: right;
+  }
+  .delta {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+}
+
+/* Promotional blocks */
+.promo {
+  background-color: #f3f6f6;
+  border-bottom: 1px solid #a1b5ba;
+  border-top: 1px solid #a1b5ba;
+  font-size: 20px;
+  margin: 35px 50px;
+  padding: 20px;
+  text-align: center;
+}
