@@ -24,7 +24,7 @@ class Minitest::Test
 end
 {% endcodeblock %}
 
-The inclusion of [Minitest::Hell][2] ensures that the tests in all cases will be executed in random order by overriding Minitest::Test.test_order to return `:parallel`.  (This is also the default behavior.)  The call to `parallelize_me!` causes all test cases to queue tests across a pool of concurrent worker threads via the Minitest::Parallel::Executor helper class.  The [implementation][3] is worth checking out because it's super simple and does its job nicely - a really great example of restrained, focus code.
+The inclusion of [Minitest::Hell][2] ensures that the tests in all cases will be executed in random order by overriding Minitest::Test.test_order to return `:parallel`.  (Random test ordering also happens to be the default behavior, but this can be overridden per-test case.)  The call to `parallelize_me!` causes all test cases to queue tests across a pool of concurrent worker threads via the Minitest::Parallel::Executor helper class.  The [implementation][3] is worth checking out because it's super simple and does its job nicely - a really great example of restrained, focus code.
 
 It's also perfectly reasonable, though presumably somewhat less awesome, to call `parallelize_me!` only on certain individual test cases when some tests require execution in a strict order.  It's also possible to override global parallelization settings on individual test cases to require serial execution by calling `i_suck_and_my_tests_are_order_dependent!` within the test class.
 
