@@ -104,3 +104,6 @@ linkedin_user: chriskottom
 
 # Hacker News Like
 hn_share_button: true
+
+# Reddit sharing
+reddit_share_button: true
