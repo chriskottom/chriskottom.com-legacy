@@ -49,6 +49,8 @@ Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(reporter_opti
 
 A feature like this, while awesomesauce, is still subject to the limitations of Ruby (random garbage collection) and Rails (stack initialization) and might not be all that useful to you if you're running a small test suite.  Still, if you notice that the same tests are consistently showing up on that list, it might be time to take a look to see what you can do about it.
 
+{% include minitest_cookbook_plug.html %}
+
 Next, I need to make a few changes to save my old and broken eyes because, lucky me, I've had problems with colors since I was a kid - both distinguishing them (browns look like greens, blues look like purples, etc.) and seeing them at all unless there's sufficient contrast with the background.  In particular, the red-on-black error text is a bit of a pain for me to make out, so I wanted to change the color to something a little brighter.  The [ANSI escape codes][4] only allow for 16 colors, but fortunately, we can subclass Minitest::DefaultReporter to produce the desired behavior.  I'd suggest something like this:
 
 {% codeblock lang:ruby test/test_helper.rb %}
