@@ -29,6 +29,8 @@ Orthodox TDDers tout better designs as one of the major benefits of writing test
 
 Running TDD by the book puts the effects of your code front and center and makes the internal workings almost an afterthought.  (Actually, not even almost - you literally *think* about the code to implement the effect *after* you've written the test to verify it.)  And when you're approaching a problem where the requirements are clear but the path to implement them isn't, writing tests first and logic last can help me to decompose and "feel" my way through to a solution by focusing on the things I do know and keeping me from wandering off to explore what I don't.  It's not a way of working that' particularly comfortable for me, but in this narrow case, it produces a finished feature a lot more reliably than my usual workflow.
 
+{% include why_test_plug.html %}
+
 ## I can develop/refactor/upgrade with confidence. ##
 
 Code lives on long after it's written, and most cases if not all significant cases, it will carry the fingerprints of many different developers.  (We all agree that Future You is not the same developer as Today You, right?)  Having a defense against regression and new bugs sneaking into your application is, in my opinion, enough to justify the extra work of writing and maintaining an automated test suite on its own for a bunch of reasons.
