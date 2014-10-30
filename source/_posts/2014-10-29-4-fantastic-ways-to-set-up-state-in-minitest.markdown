@@ -1,30 +1,33 @@
 ---
 layout: post
-title: "4 Ways to Set Up Test State in Minitest"
+title: "4 Fantastic Ways to Set Up State in Minitest"
 date: 2014-10-29 14:26:06 +0200
 comments: true
 categories: [development, Ruby, Minitest, before, let, setup, testing]
 ---
-Exercising a piece of application logic with automated unit tests follows a well-understood process that consists of four essential phases.
+{% img no-border right /images/fantastic_four.jpg The Fantastic Four %}
 
-{% img center no-border /images/test_anatomy.png Test Anatomy - Setup, Action, Assertion, and Teardown  %}
+When it comes to exercising a piece of application logic with automated unit tests, there's a well-understood process that most frameworks and testing tools follow:
+
+1. **Setup:** Establishes instances of data objects and preconditions essential for running the test.
+2. **Exercise:** Executes the method or logic to be tested.
+3. **Verify:** Verifies that the tested method has produced the expected result by making one or more assertions.
+4. **Teardown:** Cleans up or resets application state that should not be allowed to persist between tests.
 
 Perform a Google search for *"unit test anatomy"*, and you'll see this same pattern described in books and articles for many programming languages and methodologies - sometimes with slightly different terminology, but still following the same basic sequence. But the way that a given tool or testing library realizes each phase can vary a lot - a fact which has launched [hundreds of testing frameworks][1] and thousands of flame wars.<!--more-->
 
 The original Ruby standard for testing was established by the Test::Unit library (itself based on the [xUnit model][2]) which was part of the Ruby standard library going back many years and many more releases.  Minitest follows the same model by providing a `setup` method which can be overridden and will be run by the framework before each individual test.
 
-RSpec came along much later and introduced a more granular scheme of hooks for setting up test state that mapped more naturally to its block-based syntax.
+RSpec came along quite a bit later and introduced a more granular scheme of hooks for setting up test state that mapped more naturally to its block-based syntax.
 
 * **before(:each) -** logic to run before each individual test method
 * **before(:all) / before(:context) -** logic to run at the start of a context/describe block
 * **before(:suite) -** logic to run before the test suite runs
 * **let -** memoizes the result of a block and provides an accessor method for it
 
-Minitest has built-in support for some but not all of these.  In this post, I'm going to show you how to achieve the same effects in your own tests using the features that Minitest gives you along with a sprinkling of plain old Ruby.  Because after all:
+Minitest has built-in support for some but not all of these.  In this post, I'm going to show you how to achieve the same effects in your own tests using the features that Minitest gives you along with a sprinkling of plain old Ruby.  Because in the end, it's all just Ruby.
 
-{% img center /images/minitest_is_ruby.jpg Minitest is Ruby! %}
-
-## Setting Up Before Running Each Test ##
+## Setup Before Running Each Test ##
 
 You probably already know that Minitest::Test provides a `setup` method that you can override to define logic that runs before each test.
 
@@ -65,6 +68,8 @@ describe 'Thing' do
 end
 {% endcodeblock %}
 
+{% include minitest_cookbook_plug2.html %}
+
 ## What Exactly Does :let Do Again? ##
 
 Using `let` provides an alternate and some would say more elegant way of setting up testing state with a more declarative syntax.  The following would be comparable to the example in the previous section.
@@ -90,7 +95,7 @@ Comparable, but not equivalent.  Each `let` invocation defines a new method with
 
 (I had always assumed that the memoized result was cached and available for use across all tests in a test case after the first invocation, but because Minitest runs each test using a fresh instance of the test class, the value is associated with a single test instance, not shared across instances.)
 
-## Setting Up Before Running the Test Case ##
+## Setup Before Running the Test Case ##
 
 RSpec gives developers the ability to define setup code that would only run before the start of each test case using a `before(:all)` block -- now also aliased as `before(:context)`.  Minitest doesn't support the same syntax, but it's easy enough to implement by executing class-level code and using class variables to store references to any shared resources as in the following example.
 
@@ -108,7 +113,7 @@ end
 
 In this case, we're assuming that the call to the Facebook API will be slow, so in order to perform that initialization just once rather than before every single test, we assign the class variable `@@fb_client` one time at the start of the test case.  All instances of the test case will then have access to the shared client resource without creating a new connection.
 
-While this is a nice tool to have at our disposal, it has the potential of being taken too far by, for example, using it for setting up anything involving database access.  Overusing class variables in this way increases the risk of tests failing (or worse, *not failing*) randomly due to loss of [isolation][4], and so I'd be somewhat cautious about where and how often you apply this model.
+While this is a nice tool to have at our disposal, it has the potential of being taken too far by, for example, using it for setting up anything involving database access.  Overusing class variables in this way reduces [test isolation][4] and introduces the potential that tests will begin to fail (or worse, *not fail*) randomly, and so I'd be somewhat cautious about where and how often you apply this model.
 
 **Extra credit homework:** Read the [GitHub issue][3] that requests the inclusion of support for `before(:all)` and the discussion afterward.  It specifically describes the technique explained above, and the comments provide a lot of insight about how to take a conservative approach to library design.
 
