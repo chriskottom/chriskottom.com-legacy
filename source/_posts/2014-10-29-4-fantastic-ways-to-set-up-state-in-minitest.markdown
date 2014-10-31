@@ -36,7 +36,6 @@ require 'test/test_helper'
 
 class ThingTest < Minitest::Test
   def setup
-    super
     @a_thing = Thing.new
     @another = Thing.new
   end
