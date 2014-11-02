@@ -92,7 +92,41 @@ end
 
 Comparable, but not equivalent.  Each `let` invocation defines a new method with the specified name that executes the block argument upon the first invocation and caches the result for later access - in other words, a lazy initializer.  The main advantage of this technique over the use of instance variables defined in a `setup` method or `before` block is that the setup logic can be divided into smaller units and executed only in tests where they're needed.
 
-(I had always assumed that the memoized result was cached and available for use across all tests in a test case after the first invocation, but because Minitest runs each test using a fresh instance of the test class, the value is associated with a single test instance, not shared across instances.)
+What's more, `let` gives you the ability to define and redefine the block assigned to each name so that tests can be run against a set of values and preconditions defined within the most immediate block, then the enclosing block, and so on. Take the following sample spec as an example:
+
+{% codeblock lang:ruby test/thing_test.rb %}
+require 'test/test_helper'
+
+describe 'ThingList' do
+  subject { [thing] }
+
+  describe 'inner block' do
+    let(:thing) { Thing.new(name: 'foo') }
+
+    it 'has one Thing named "foo"' do
+      subject.length.must_equal 1
+      first_thing = subject.first
+      first_thing.name.must_equal 'foo'
+    end
+
+    describe 'more inner block' do
+      let(:thing) { Thing.new(name: 'bar') }
+
+      it 'has one Thing named "bar"' do
+        subject.length.must_equal 1
+        first_thing = subject.first
+        first_thing.name.must_equal 'bar'
+      end
+    end
+  end
+end
+{% endcodeblock %}
+
+Both of these tests will pass since the contents of the list in each case will be determined by whatever is most immediately assigned to `thing` in the enclosing block.  This can be a really powerful tool, and I've found it's really effective in situations where I need to test the same method with different inputs, but bear in mind that nesting `describe` blocks too deeply will make your tests harder to understand and leave you and other developers confused about what's actually being tested.
+
+(Special thanks to **@jemmyw** for calling out the fact that this was not well covered in the original version of the post.)
+
+I had always assumed that the memoized result was cached and available for use across all tests in a test case after the first invocation, but because Minitest runs each test using a fresh instance of the test class, the value is associated with a single test instance, not shared across instances.
 
 ## Setup Before Running the Test Case ##
 
@@ -131,6 +165,7 @@ end
 The result is a Facebook API client that's shared between all test cases in the suite and which is set up once before any tests are executed.
 
 The fact that this *can* be done doesn't mean that it *should* be done though.  Before using a technique such as this though, you need to ask yourself what effect it will have on your suite.  Tests should be written as much as possible in a single file with as much verbosity and repetition as is needed to convey their meaning, and I'd personally be really reluctant to distribute code that's essential to a clear understanding of my test case into other files.
+
 
 
 {% include mailchimp/minitest_after_post.html %}
