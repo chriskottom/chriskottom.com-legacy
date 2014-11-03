@@ -28,7 +28,7 @@ The inclusion of [Minitest::Hell][2] ensures that the tests in all cases will be
 
 It's also perfectly reasonable, though presumably somewhat less awesome, to call `parallelize_me!` only on certain individual test cases when some tests require execution in a strict order.  It's also possible to override global parallelization settings on individual test cases to require serial execution by calling `i_suck_and_my_tests_are_order_dependent!` within the test class.
 
-{% include rails_testing_tips_plug.html %}
+{% include minitest_cookbook_plug.html %}
 
 One additional feature that's not documented anywhere that I could find except in the source code: you can specify the number of worker threads started and run by Minitest::Parallel::Executor by providing an environment variable on the command line when you run your tests like so: `N=4 rake test`.  (Minitest defaults to `N=2` if no other value is given.)
 
@@ -73,7 +73,7 @@ My goal was to demonstrate test suite performance for three options:
 
 In order to see how Minitest behaved across different interpreters, I ran the same test using MRI Ruby 2.1.1, JRuby 1.7.9, and Rubinius 2.2.10.
 
-{% include rails_testing_tips_plug.html %}
+{% include minitest_cookbook_plug.html %}
 
 For each implementation and each concurrency level, I executed three test runs and calculated the averages values for suite execution and number of assertions per second as reported by Minitest as well as the total and CPU times reported by the Unix `time` command.  The tables below show the averages along with the relative differences over the baseline (serial) case in parentheses.
 
