@@ -10,7 +10,7 @@ _deploy
 bin
 public
 secrets.rb
-source/_stash
+source/_stash*
 source/stylesheets/screen.css
 vendor
 node_modules
