@@ -1,29 +1,28 @@
-/* nice sticky footer, from http://getbootstrap.com/examples/sticky-footer/ */
+/*=================================
+   GLOBAL / COMMON STYLES
+ =================================*/
+
+// nice sticky footer, from http://getbootstrap.com/examples/sticky-footer/
 html, body {
     height: 100%;
-    /* The html and body elements cannot have any padding or margin. */
 }
-/* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  /* Negative indent footer by its height */
   margin: 0 auto -60px;
-  /* Pad bottom by footer height */
   padding: 0 0 60px;
 }
-
-/* Set the fixed height of the footer here */
 footer[role=contentinfo] {
     height: 60px;
 }
 
+// content block
 #content {
   margin-top: 20px;
 }
 
-/* General positioning stuff */
+// general positioning stuff
 .left { float: left; }
 .right { float: right; }
 .center {
@@ -32,46 +31,7 @@ footer[role=contentinfo] {
   margin-right: auto;
 }
 
-/* Use a nicer font on the headers */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', Helvetica, Arial, sans-serif;
-  font-weight: 300;
-}
-
-/* Make post titles stand out */
-h1 {
-  font-size: 36px;
-  text-shadow: 1px 1px 1px #ccc;
-
-  a {
-    color: #2c3e50;
-  }
-
-  a:hover {
-    color: #139077;
-    text-decoration: none;
-  }
-}
-
-/* Size down the post titles on the archive pages */
-#blog-archives h1 {
-  font-size: 32px;
-}
-
-/* Put a little more space around headers */
-.page-header {
-  margin-top: 10px;
-  .entry-title {
-    margin-top: 0.4em;
-  }
-}
-
-/* Make links a little darker */
-a {
-  color: #139077;
-}
-
-/* Layouts for images and figures / images with captions */
+// layouts for images and figures/images with captions
 figure img {
   margin-bottom: 5px;
 }
@@ -92,315 +52,309 @@ figcaption {
   }
 }
 
-/* Navigation styles */
-.nav li.featured a {
-  color: #ffffcc;
-  font-weight: bolder;
+// make links a little darker
+a {
+  color: #139077;
 }
 
-/* No formatting for sidebar ULs */
-.sidebar {
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-}
 
-/* Pretty-up the Pinboard output */
-#pinboard_linkroll {
-  .pin-title {
-    font-weight: bold;
-  }
-  .pin-description {
-    display: block;
-  }
-  .pin-tag {
-    display: none;
-  }
-}
+/*=================================
+   BLOG STYLES
+ =================================*/
+.ck-blog {
 
-/* Put a little space between post meta stuff at the end of the post */
-p.meta {
-  .glyphicon {
-    margin-left: 15px;
-  }
-  span:first-child {
-    margin-left: 0;
-  }
-}
-
-/* Social icons */
-.social-profiles {
-  margin-bottom: 25px;
-  text-align: center;
-
-  a.social-icon {
-    background-color: #ffffff;
-    border-radius: 3px;
-    display: inline-block;
-    height: 48px;
-    width: 48px;
-    -o-transition:.1s;
-    -ms-transition:.1s;
-    -moz-transition:.1s;
-    -webkit-transition:.1s;
-    transition:.3s;
+  // navigation styles
+  .nav li.featured a {
+    color: #ffffcc;
+    font-weight: bolder;
   }
 
-  a.google-icon {
-    background-image: url('/images/googleplus-black.png');
-    &:hover {
-      background-color: #ff5555;
-      background-image: url('/images/googleplus.png');
+  // nicer font for headers
+  h1, h1 > a, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+  }
+
+  // make  post titles stand out */
+  h1 {
+    font-size: 36px;
+    text-shadow: 1px 1px 1px #ccc;
+
+    a {
+      color: #2c3e50;
+    }
+
+    a:hover {
+      color: #139077;
+      text-decoration: none;
     }
   }
 
-  a.facebook-icon {
-    background-image: url('/images/facebook-black.png');
-    &:hover {
-      background-color: #3b5998;
-      background-image: url('/images/facebook.png');
+  .sidebar {
+
+    // social icons
+    .social-profiles {
+      margin-bottom: 25px;
+      text-align: center;
+
+      a.social-icon {
+	background-color: #ffffff;
+	border-radius: 3px;
+	display: inline-block;
+	height: 48px;
+	width: 48px;
+	-o-transition:.1s;
+	-ms-transition:.1s;
+	-moz-transition:.1s;
+	-webkit-transition:.1s;
+	transition:.3s;
+      }
+
+      a.google-icon {
+	background-image: url('/images/googleplus-black.png');
+	&:hover {
+	  background-color: #ff5555;
+	  background-image: url('/images/googleplus.png');
+	}
+      }
+
+      a.facebook-icon {
+	background-image: url('/images/facebook-black.png');
+	&:hover {
+	  background-color: #3b5998;
+	  background-image: url('/images/facebook.png');
+	}
+      }
+
+      a.github-icon {
+	background-image: url('/images/github-black.png');
+	&:hover {
+	  background-color: #4183c4;
+	  background-image: url('/images/github.png');
+	}
+      }
+
+      a.linkedin-icon {
+	background-image: url('/images/linkedin-black.png');
+	&:hover {
+	  background-color: #007fb1;
+	  background-image: url('/images/linkedin.png');
+	}
+      }
+
+      a.twitter-icon {
+	background-image: url('/images/twitter-black.png');
+	&:hover {
+	  background-color: #00aced;
+	  background-image: url('/images/twitter.png');
+	}
+      }
+    }
+
+    // no bullets in lists
+    ul {
+      list-style: none;
+      padding-left: 0;
     }
   }
 
-  a.github-icon {
-    background-image: url('/images/github-black.png');
-    &:hover {
-      background-color: #4183c4;
-      background-image: url('/images/github.png');
+  // pretty-up the Pinboard output
+  #pinboard_linkroll {
+    .pin-title {
+      font-weight: bold;
+    }
+    .pin-description {
+      display: block;
+    }
+    .pin-tag {
+      display: none;
     }
   }
 
-  a.linkedin-icon {
-    background-image: url('/images/linkedin-black.png');
-    &:hover {
-      background-color: #007fb1;
-      background-image: url('/images/linkedin.png');
+  // put a little more space around headers
+  .page-header {
+    margin-top: 10px;
+    .entry-title {
+      margin-top: 0.4em;
     }
   }
 
-  a.twitter-icon {
-    background-image: url('/images/twitter-black.png');
-    &:hover {
-      background-color: #00aced;
-      background-image: url('/images/twitter.png');
+  // support for DL/DT/DD tags
+  dl {
+    margin-bottom: 10.5px;
+    dt {
+      font-weight: bold;
     }
-  }
-}
-
-/* Formatting for the home page */
-body#home {
-  em {
-    color: #0c5f4e;
-    font-style: normal;
-    font-weight: bold;
-  }
-
-  .hero {
-    background-clip: border-box;
-    background-image: url('/images/homepage_background.jpg');
-    background-position: 0 -80px;
-    background-repeat: none;
-    background-size: cover;
-
-    .jumbotron {
-      background-color: rgba(255, 255, 255, 0.4);
-      margin: 75px auto;
-    }
-
-    .lead {
-      font-size: 24px;
+    dd {
+      margin-bottom: 6px;
     }
   }
 
-  #about, #blog, #recent-work {
-    @extend .col-lg-4;
-    font-size: 18px;
+  // MailChimp after-post sign-up form
+  .mailchimp.after-post {
+    background: #f3f6f6;
+    border: 2px solid #6aa5b4;
+    border-radius: 7px;
+    margin: 20px auto;
+    padding: 0 25px 25px 25px;
 
     h2 {
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
-
-    h3 {
-      font-size: 18px;
-      font-weight: 500;
-      margin: 0;
-    }
-
-    .page-header {
-      border: 0;
-      margin: 0 0 15px;
-      padding: 0;
-    }
-
-    p.meta {
-      font-size: 16px;
-    }
-  }
-}
-
-/* Tweak the blog-index listing */
-.blog-index {
-  .post {
-    margin-bottom: 2.5em;
-
-    footer {
-      margin-top: 1em;
-    }
-  }
-}
-
-/* Support for DL/DT/DD tags */
-dl {
-  margin-bottom: 10.5px;
-
-  dt {
-    font-weight: bold;
-  }
-
-  dd {
-    margin-bottom: 6px;
-  }
-}
-
-
-/* Minor adjustment to alignment of FB share component. */
-.fb-like {
-  vertical-align: top;
-}
-
-/* Mailchimp sign-up forms */
-.mailchimp.after-post {
-  background: #ecf0f1;
-  border: 3px dashed #6aa5b4;
-  border-radius: 7px;
-  margin: 30px auto;
-  padding: 0 35px 25px 35px;
-
-  h2 {
-    margin-top: 20px;
-  }
-
-  p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-
-  .indicates-required {
-    @extend .pull-right;
-    font-size: 14px;
-  }
-
-  form {
-    padding-top: 0;
-
-    label, input {
-      font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-
-    label {
-      @extend .control-label;
-      font-size: 16px;
-    }
-
-    .mce_inline_error {
-      font-size: 16px;
-    }
-
-    input:not([type=submit]) {
-      @extend .form-control;
-    }
-
-    label.error {
-      @extend .text-warning;
-      font-size: 14px;
-      font-weight: normal;
-      margin-left: 3px;
-    }
-
-    input.error {
-      @extend .has-error;
-    }
-
-    input.button, input[type=submit], input[type=button] {
-      @extend .btn;
-      @extend .btn-warning;
-      @extend .btn-block;
-      font-size: 1.5em;
+      font-size: 24px;
       font-weight: bold;
-      height: auto;
-      max-width: 400px;
       margin-top: 20px;
-      @extend .center-block;
     }
 
-    .mc-field-group {
-      @extend .form-group;
-      margin-bottom: 10px;
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
 
-      &.required {
-	@extend .has-feedback;
+    .indicates-required {
+      @extend .pull-right;
+      font-size: 14px;
+    }
 
-	span.asterisk {
-	  @extend .form-control-feedback;
+    form {
+      padding-top: 0;
+
+      label, input {
+	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      label {
+	@extend .control-label;
+	font-size: 14px;
+      }
+
+      .mce_inline_error {
+	font-size: 14px;
+      }
+
+      input:not([type=submit]) {
+	@extend .form-control;
+      }
+
+      label.error {
+	@extend .text-warning;
+	font-size: 14px;
+	font-weight: normal;
+	margin-left: 3px;
+      }
+
+      input.error {
+	@extend .has-error;
+      }
+
+      input.button, input[type=submit], input[type=button] {
+	@extend .btn;
+	@extend .btn-warning;
+	@extend .btn-block;
+	color: #f6f6f6;
+	font-size: 1.2em;
+	font-weight: bold;
+	height: auto;
+	max-width: 400px;
+	margin-top: 20px;
+	@extend .center-block;
+      }
+
+      .mc-field-group {
+	@extend .form-group;
+	margin-bottom: 10px;
+
+	&.required {
+	  @extend .has-feedback;
+
+	  span.asterisk {
+	    @extend .form-control-feedback;
+	  }
 	}
+      }
+    }
+
+    #notification-container {
+      margin-top: 15px;
+    }
+  }
+
+  .hate-spam {
+    @extend .center-block;
+    @extend .text-info;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  // promtional callouts
+  .promo {
+    background-color: #f3f6f6;
+    border-bottom: 1px solid #a1b5ba;
+    border-top: 1px solid #a1b5ba;
+    font-size: 20px;
+    margin: 35px 50px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  // put a little space between post meta stuff at the end of the post
+  p.meta {
+    .glyphicon {
+      margin-left: 15px;
+    }
+    span:first-child {
+      margin-left: 0;
+    }
+  }
+
+  // Facebook like widget alignment
+  .fb-like {
+    vertical-align: top;
+  }
+
+  // proper article spacing on blog home
+  .blog-index {
+    .post {
+      margin-bottom: 2.5em;
+      footer {
+	margin-top: 1em;
       }
     }
   }
 
-  #notification-container {
-    margin-top: 15px;
+  // blog archive post titles should be sized down a little
+  #blog-archives h1 {
+    font-size: 28px;
   }
-}
-.hate-spam {
-  @extend .center-block;
-  @extend .text-info;
-  color: #333;
-  margin-top: 20px;
-  text-align: center;
-}
 
-/* Results tables */
-table.results {
-  border: 3px solid #aaa;
-  margin: 20px auto;
-  width: 90%;
-
-  tr, td, th {
-    border: 1px solid #aaa;
-    padding: 7px;
+  // results tables (used for benchmarks)
+  table.results {
+    border: 3px solid #aaa;
+    margin: 20px auto;
+    width: 90%;
+    tr, td, th {
+      border: 1px solid #aaa;
+      padding: 7px;
+    }
+    tr th {
+      background-color: #f3f3f3;
+      text-align: center;
+    }
+    .left, .center, .right {
+      display: table-cell;
+      float: none;
+    }
+    .left {
+      text-align: left;
+    }
+    .center {
+      text-align: center;
+    }
+    .right {
+      text-align: right;
+    }
+    .delta {
+      font-style: italic;
+      font-size: 0.9em;
+    }
   }
-  tr th {
-    background-color: #f3f3f3;
-    text-align: center;
-  }
-  .left, .center, .right {
-    display: table-cell;
-    float: none;
-  }
-  .left {
-    text-align: left;
-  }
-  .center {
-    text-align: center;
-  }
-  .right {
-    text-align: right;
-  }
-  .delta {
-    font-style: italic;
-    font-size: 0.9em;
-  }
-}
-
-/* Promotional blocks */
-.promo {
-  background-color: #f3f6f6;
-  border-bottom: 1px solid #a1b5ba;
-  border-top: 1px solid #a1b5ba;
-  font-size: 20px;
-  margin: 35px 50px;
-  padding: 20px;
-  text-align: center;
 }

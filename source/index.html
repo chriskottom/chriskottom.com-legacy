@@ -14,7 +14,7 @@ body_id: home
 <div id="main" class="container">
   <div id="content">
     <div class="row">
-      <div id="about">
+      <div id="about" class="column">
 	<h2>A Little About Me</h2>
 	<p>Life is where you find it.  I moved to the <em>Czech Republic</em> in the fall of 2000 to work for a long-gone startup.  When I left the states, I told my friends and family that I would be here <em>"for a year or two"</em>.</p>
 	<p>I've spent a good chunk of the past 20 years hunched over a keyboard working on <em>system architecture &amp; design</em> and <em>web applications</em> - most recently using <em>Ruby on Rails</em> and <em>JavaScript</em>.</p>
@@ -24,7 +24,7 @@ body_id: home
 	</p>
       </div>
 
-      <div id="blog">
+      <div id="blog" class="column">
 	<h2>From The Blog</h2>
 	{% for post in site.posts limit:4 reverse %}
 	<article class="page-header">
@@ -37,13 +37,14 @@ body_id: home
 	<p><a class="btn btn-primary" href="/blog" role="button">Check out more &raquo;</a></p>
       </div>
 
-      <div id="recent-work">
+      <div id="recent-work" class="column">
 	<h2>Recently Working On</h2>
 	<p>
-	  I've started working on a new project - <a href="https://minitestcookbook.com/"><b>The Minitest Cookbook</b></a>
-	  - which I hope will be coming out as an ebook in the fall.  The goal will be to provide readers with a close
-	  reading of the Minitest source and to show how the generalMinitest workflow can be leveraged to implement your
-	  own highly customized testing stack.
+	  I've been working away on some quality material for
+	  <a href="https://minitestcookbook.com/"><b>The Minitest Cookbook</b></a>,
+	  and I'm aiming for a winter launch (January or February).  I'll set
+	  a hard deadline before Christmas, but right now, I'm just <u>really</u>
+	  enjoying the writing!
 	</p>
       </div>
     </div>

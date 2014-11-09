@@ -1,0 +1,72 @@
+/*=================================
+   HOMEPAGE STYLES
+ =================================*/
+.ck-home {
+
+  // bold that shit
+  em {
+    color: #0c5f4e;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  // big-ass banner with obligatory blurry background picture
+  .hero {
+    background-clip: border-box;
+    background-image: url('/images/homepage_background.jpg');
+    background-position: 0 -80px;
+    background-repeat: none;
+    background-size: cover;
+
+    .jumbotron {
+      background-color: rgba(255, 255, 255, 0.4);
+      margin: 75px auto;
+
+      h1 {
+	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	font-size: 67.5px;
+	font-weight: 300;
+	text-shadow: 1px 1px 1px #ccc;
+      }
+    }
+
+    .lead {
+      font-size: 24px;
+    }
+  }
+
+  // divide the screen into thirds
+  .column {
+    @extend .col-lg-4;
+    font-size: 18px;
+
+    // recent posts with meta info
+    .page-header {
+      border: 0;
+      margin: 0 0 15px;
+      padding: 0;
+    }
+
+    // header fonts
+    h2, h3 {
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 500;
+    }
+
+    // column titles
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    // recent post titles
+    h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    // post meta info
+    p.meta {
+      font-size: 16px;
+    }
+  }
+}

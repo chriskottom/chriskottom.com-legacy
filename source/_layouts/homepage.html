@@ -1,5 +1,5 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}{% include head.html %}
-<body {% if page.body_id %} id="{{ page.body_id }}" {% endif %}>
+<body class="ck-home ck-blog" {% if page.body_id %} id="{{ page.body_id }}" {% endif %}>
   <div id="wrap">
     {{ content | expand_urls: root_url }}
   </div>
