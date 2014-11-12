@@ -1,31 +1,42 @@
 .ck-landing {
-  nav.navbar.navbar-default {
+  nav.navbar {
     border-radius: 0;
     min-height: 35px;
-    opacity: 0.2;
 
     a.navbar-brand {
       color: #ffffff;
       font-size: 15px;
       height: 35px;
       margin: 0;
-      padding: 10px;
-    }
-    &:hover {
-      opacity: 1;
-      transition: opacity .25s ease-in-out;
-      -moz-transition: opacity .25s ease-in-out;
-      -o-transition: all 0.25s ease-in-out;
-      -webkit-transition: opacity .25s ease-in-out;
+      opacity: .3;
+      padding: 7px 10px;
+
+      &:hover {
+	opacity: 1;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+      }
     }
   }
 
   section {
-    margin-top: 50px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  section:last-child {
+    border-bottom: 0;
   }
 
   p, li {
     font-size: 18px;
+  }
+
+  #lead {
+    padding-top: 35px;
   }
 
   #description {
@@ -66,16 +77,15 @@
       margin-top: 0;
     }
     .avatar {
-      @extend .img-circle;
+      @extend .img-rounded;
+      border: 2px solid #6aa5b4;
       float: left;
       margin-left: 25px;
       margin-right: 100px;
-      width: 180px;
-      height: 180px;
     }
     div {
       display: inline-block;
-      width: 800px;
+      width: 750px;
     }
   }
 
