@@ -1,0 +1,179 @@
+.ck-landing {
+  nav.navbar.navbar-default {
+    border-radius: 0;
+    min-height: 35px;
+    opacity: 0.2;
+
+    a.navbar-brand {
+      color: #ffffff;
+      font-size: 15px;
+      height: 35px;
+      margin: 0;
+      padding: 10px;
+    }
+    &:hover {
+      opacity: 1;
+      transition: opacity .25s ease-in-out;
+      -moz-transition: opacity .25s ease-in-out;
+      -o-transition: all 0.25s ease-in-out;
+      -webkit-transition: opacity .25s ease-in-out;
+    }
+  }
+
+  section {
+    margin-top: 50px;
+  }
+
+  p, li {
+    font-size: 18px;
+  }
+
+  #description {
+    .left-col {
+      @extend .col-md-6;
+    }
+  }
+
+  #benefits {
+    h2 {
+      text-align: center;
+    }
+    div {
+      @extend .clearfix;
+
+      .left-col, .right-col {
+	display: block;
+      }
+      .left-col {
+	@extend .col-md-offset-1;
+	@extend .col-md-5;
+      }
+      .right-col {
+	@extend .col-md-5;
+      }
+      .center-col {
+	@extend .col-md-offset-3;
+	@extend .col-md-6;
+	h3, p {
+	  text-align: center;
+	}
+      }
+    }
+  }
+
+  #author .container {
+    h2 {
+      margin-top: 0;
+    }
+    .avatar {
+      @extend .img-circle;
+      float: left;
+      margin-left: 25px;
+      margin-right: 100px;
+      width: 180px;
+      height: 180px;
+    }
+    div {
+      display: inline-block;
+      width: 800px;
+    }
+  }
+
+
+
+  .mailchimp {
+    @extend .col-md-6;
+    background: #f3f6f6;
+    border: 2px solid #6aa5b4;
+    border-radius: 7px;
+    padding: 0 25px 25px 25px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .indicates-required {
+      @extend .pull-right;
+      font-size: 14px;
+    }
+
+    form {
+      padding-top: 0;
+
+      label, input {
+	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      label {
+	@extend .control-label;
+	font-size: 14px;
+      }
+
+      .mce_inline_error {
+	font-size: 14px;
+      }
+
+      input:not([type=submit]) {
+	@extend .form-control;
+      }
+
+      label.error {
+	@extend .text-warning;
+	font-size: 14px;
+	font-weight: normal;
+	margin-left: 3px;
+      }
+
+      input.error {
+	@extend .has-error;
+      }
+
+      input.button, input[type=submit], input[type=button] {
+	@extend .btn;
+	@extend .btn-warning;
+	@extend .btn-block;
+	color: #f6f6f6;
+	font-size: 1.2em;
+	font-weight: bold;
+	height: auto;
+	max-width: 400px;
+	margin-top: 20px;
+	@extend .center-block;
+      }
+
+      .mc-field-group {
+	@extend .form-group;
+	margin-bottom: 10px;
+
+	&.required {
+	  @extend .has-feedback;
+
+	  span.asterisk {
+	    @extend .form-control-feedback;
+	  }
+	}
+      }
+    }
+
+    #notification-container {
+      margin-top: 15px;
+    }
+  }
+
+  .hate-spam {
+    @extend .center-block;
+    @extend .text-info;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+
+}
