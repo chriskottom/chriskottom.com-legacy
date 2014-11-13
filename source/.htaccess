@@ -5,6 +5,8 @@ RedirectMatch   302   ^\/(\d{4})\/(\d{2})\/(.*) /blog/$1/$2/$3
 
 RedirectMatch   301   ^\/blog\/2014\/10\/4\-ways\-to\-set\-up\-test\-state\-in\-minitest(.*)$ /blog/2014/10/4-fantastic-ways-to-set-up-state-in-minitest/
 
+RedirectMatch   301   ^\/products\/(.*)$ /$1
+
 ### CACHING ###
 ExpiresActive On
 ExpiresDefault A3600
