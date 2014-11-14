@@ -54,14 +54,11 @@
     input.button, input[type=submit], input[type=button] {
       @extend .btn;
       @extend .btn-warning;
-      @extend .btn-block;
       color: #f6f6f6;
       font-size: 1.2em;
       font-weight: bold;
       height: auto;
-      max-width: 400px;
-      margin-top: 20px;
-      @extend .center-block;
+      //margin-top: 20px;
     }
 
     .mc-field-group {

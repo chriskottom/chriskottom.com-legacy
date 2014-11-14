@@ -37,19 +37,58 @@
   }
 
   #lead {
-    padding-top: 35px;
+    .jumbotron {
+      margin-top: 35px;
+    }
   }
 
   #description {
-    .left-col {
-      @extend .col-md-6;
+    .cover-image, .mailchimp {
+      float: right;
+      margin: 30px 0 20px 50px;
+      margin-left: 50px;
+      margin-top: 30px;
+      width: 50%;
+    }
+
+    .cover-image {
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .mailchimp {
+      padding: 20px;
+
+      h3 {
+	margin-top: 0;
+      }
+
+      form {
+	@extend .form-inline;
+
+	.mc-field-group, .form-group {
+	  padding: 0 15px 0 0;
+
+	  &:last-child {
+	    padding: 0;
+	  }
+	}
+
+	input.email {
+	  font-size: 18px;
+	  position: relative;
+	  width: 100%;
+	}
+
+	.button {
+	  margin-top: -3px;
+	  padding: 8px 20px;
+	}
+      }
     }
   }
 
-  #benefits {
-    h2 {
-      text-align: center;
-    }
+  #description {
     div {
       @extend .clearfix;
 
