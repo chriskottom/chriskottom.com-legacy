@@ -4,6 +4,7 @@ title: "New Project: BetterFBO"
 date: 2014-03-22 15:50:35 +0100
 comments: true
 categories: [ BetterFBO, FBO, FedBizOpps, business, startups ]
+description: BetterFBO will provide an answer to some of the design, UX, and technical problems I've noticed with the federal government's FedBizOpps system.
 ---
 {% img no-border right /images/betterfbo-logo.png 500 BetterFBO  %}
 

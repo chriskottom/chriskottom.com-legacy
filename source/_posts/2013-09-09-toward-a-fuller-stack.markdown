@@ -4,6 +4,7 @@ title: Toward a Fuller Stack
 date: 2013-09-09 12:12
 comments: true
 categories: development
+description: A full-stack developer could be someone who's equally comfortable working on web applications from the front or the back.  But should it be something more?
 ---
 My dad could fix anything. He worked as a mechanic in the mines of the [Iron Range][1] where I grew up and spent his days keeping the trucks and shovels running. Then he would come home and fix things around the house: the toilet that wouldn't flush, the door to the kitchen cabinet that wouldn't close quite right, the automatic transmission on mom's goddamn car. And if he couldn't find them, he had a handful of half-finished projects to choose from out in the barn at any given time. Growing up around a guy like that, you develop an appreciation for those who seem capable of handling whatever comes - within a certain context, at least.
 

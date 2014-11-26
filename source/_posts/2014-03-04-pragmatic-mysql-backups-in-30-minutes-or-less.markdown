@@ -4,6 +4,7 @@ title: "Pragmatic MySQL Backups in 30 Minutes or Less"
 date: 2014-03-04 12:56:06 +0100
 comments: true
 categories: development MySQL database backup Tarsnap
+description: Build out a simple MySQL backup solution in the time it takes to get a pizza delivered.
 ---
 If you're writing web applications, it's more than likely that you're running a MySQL install somewhere - maybe several somewheres.  However you might feel about the MySQL soap opera, it's still [consistently ranked](http://db-engines.com/en/ranking_trend) among the most popular databases on the planet, and even if it's lost some of its caché in recent years, it's arguably the default choice for most developers starting a new project.
 

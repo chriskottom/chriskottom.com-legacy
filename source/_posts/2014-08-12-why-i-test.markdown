@@ -4,6 +4,7 @@ title: "Why I Test"
 date: 2014-08-11 09:32:01 +0200
 comments: true
 categories: [development, testing, TDD]
+description: The reasons I write automated tests based on my own pragmatic, evidence-based approach to writing software
 ---
 If you're part of a community that considers writing automated tests an essential part of development and you yourself write automated tests for your code as a matter of routine, you might want to stretch out your neck a little before reading further.  Highly nod-along-able material awaits you along with maybe one or two things you find disagreeable or blasphemous.
 

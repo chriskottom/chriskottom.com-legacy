@@ -4,6 +4,7 @@ title: "2013 SaaS Survey: A Bootstrapper’s TL;DR"
 date: 2013-09-12 13:13
 comments: true
 categories: SaaS, business, marketing, revenue, sales
+description: A few takeaways from the 2013 SaaS Survey that will interest the founders of self-funded startups
 ---
 About a week ago, David Skok posted results from a [study of 155 SaaS companies][1] to his [For Entrepreneurs blog][2]. The participants in the survey were described as:
 
@@ -13,9 +14,7 @@ About a week ago, David Skok posted results from a [study of 155 SaaS companies]
 > *   $100s to $MMs median annual contract value ($20K median)
 > *   Participants from around the world, although primarily U.S.
 
-My thought at this point: move on. The analysis was long, and I didn't expect to find anything that directly related to my own profile and immediate interests: independents, bootstrapped lifestyle businesses, and so on. Reading the first few paragraphs though, it became clear that businesses in the lowest revenue bracket (less than $2MM annual revenue) were outliers in most respects. The smaller companies experienced higher annual growth (**89% median revenue increase** vs. mid-30s for alltothers) and **captured new revenue more effectively with Internet sales and marketing channels** than their larger counterparts. It got me thinking that perhaps these businesses have more in common with micro ISVs than they did with businesses in the higher revenue tiers, and so I kept reading. In the end, I found a few worthwhile nuggets of wisdom and support for things I'd heard anecdotally.
-
-<!--more-->
+My thought at this point: move on. The analysis was long, and I didn't expect to find anything that directly related to my own profile and immediate interests: independents, bootstrapped lifestyle businesses, and so on. Reading the first few paragraphs though, it became clear that businesses in the lowest revenue bracket (less than $2MM annual revenue) were outliers in most respects. The smaller companies experienced higher annual growth (**89% median revenue increase** vs. mid-30s for alltothers) and **captured new revenue more effectively with Internet sales and marketing channels** than their larger counterparts. It got me thinking that perhaps these businesses have more in common with micro ISVs than they did with businesses in the higher revenue tiers, and so I kept reading. In the end, I found a few worthwhile nuggets of wisdom and support for things I'd heard anecdotally.<!--more-->
 
 ### Takeaway #1: It's better on the bottom.
 

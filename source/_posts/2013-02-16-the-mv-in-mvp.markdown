@@ -4,6 +4,7 @@ title: The MV in MVP
 date: 2013-02-16 09:09
 comments: true
 categories: business
+description: The Minimum Viable Product (MVP)  refers to an experiment designed to test assumptions about a business on customers. It's a very approachable concept but also very misunderstood.
 ---
 I really connected with many of the ideas presented in [The Lean Startup][1] when I read it last year. While it's had its critics, there are few business books I've read that take such an engineering-based approach to the process of bringing a business to life, and many of the principles it encourages have strong parallels to techniques I've used in software development over the years.
 

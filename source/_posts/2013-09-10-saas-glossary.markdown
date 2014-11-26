@@ -4,6 +4,7 @@ title: SaaS Glossary
 date: 2013-09-10 10:10
 comments: true
 categories: [SaaS, 'SaaS Glossary']
+description: The Saas Glossary, a simple tool that gives easy access to definitions for some of the most commonly used terms within the Software as a Service domain
 ---
 I've recently been working on learning some of the basics of SaaS, and at times, I've found myself getting wrapped up in unfamiliar terms and acronyms. While there are plenty of [good][1] [resources][2] out there for this domain, I was looking for something simple that I could keep open on my desktop as a reference, and finding nothing, I decided to make my own.<!--more-->
 

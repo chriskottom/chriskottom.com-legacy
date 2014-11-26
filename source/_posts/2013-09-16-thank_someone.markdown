@@ -4,6 +4,7 @@ title: Thank Someone
 date: 2013-09-16 09:09
 comments: true
 categories: life
+description: If there's someone who's helped you in the past, and you think they may not know what it meant to you, it's a good day to say thanks.
 ---
 When I was young, once of my teachers said something that has stayed with me for the past 20 years. It was the most unexpected thing at the time after I'd given him years worth of reasons to write me off. I'd been an average student through most of college, and he's been witness to some of my least inspiring performances. Now I felt like I'd figured out what I was there to do, and I was trying to simply be better and do better. To know that it hadn't gone unnoticed meant a lot to me then and at many times since, but it's troubled me that he might not know how grateful I am for it.<!--more-->
 

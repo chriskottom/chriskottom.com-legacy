@@ -4,6 +4,7 @@ title: "The Black Screen of Death: A Survival Guide"
 date: 2013-10-19 12:12
 comments: true
 categories: [NVIDIA, Ubuntu, 'black screen', tech, upgrade]
+description: Upgrading to Ubuntu 13.10, I encountered the dreaded Black Screen of Death. This is how I fixed it.
 ---
 Ubuntu upgrades are always nice because they combine two things everyone loves: *new* and *free*. It's like geek Christmas if Christmas came twice a year and was mostly about unusual stocking stuffers and only the occasional big-ticket present.
 

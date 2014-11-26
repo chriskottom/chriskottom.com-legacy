@@ -5,6 +5,7 @@ date: 2014-10-04 10:36:27 +0200
 comments: true
 categories: [development, Ruby, Rails, Minitest, concurrency, parallelization, testing]
 featured: 100
+description: A look at Minitest's concurrent model for test execution - Minitest::Parallel. How does it work, and what can you expect from it?
 ---
 Among all the other morsels of sunshine and goodness it offers, [Minitest][1] gives you the ability to denote that some or all of your test cases are able to run concurrently, and as pointed out in the source comments, that can only mean one thing: that you rule and your tests are awesome.
 

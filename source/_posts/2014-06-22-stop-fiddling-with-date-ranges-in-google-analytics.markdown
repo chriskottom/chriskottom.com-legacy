@@ -4,6 +4,7 @@ title: "Stop Fiddling with Date Ranges in Google Analytics"
 date: 2014-06-22 11:00:15 +0200
 comments: true
 categories: [marketing, Google Analytics, tips, date range]
+description: Create a bookmarklet that passes custom date range parameters to Google Analytics.
 ---
 {% img no-border right /images/ga_date_range_selector.png 500 Google Analytics date range selector %}
 
