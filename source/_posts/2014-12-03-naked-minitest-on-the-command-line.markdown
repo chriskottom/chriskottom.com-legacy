@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Naked Minitest on the Command Line"
-date: 2014-12-02 10:27:09 +0100
+date: 2014-12-03 11:27:09 +0100
 comments: true
 categories: [development, Ruby, Minitest, "command line", "verbose", "single test"]
 description: Minitest offers little in the way of frills in many places, but there are a few command line options that you should know about
