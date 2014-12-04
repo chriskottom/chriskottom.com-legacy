@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Naked Minitest on the Command Line"
+title: "Minitest in the Buff"
 date: 2014-12-03 11:27:09 +0100
 comments: true
 categories: [development, Ruby, Minitest, "command line", "verbose", "single test"]
