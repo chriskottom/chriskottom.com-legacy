@@ -1,5 +1,9 @@
 .ck-landing {
+  background: rgba(43, 61, 79, 1);
+
   nav.navbar {
+    background-color: rgba(43, 61, 79, 0.7);
+    border: 0;
     border-radius: 0;
     min-height: 35px;
 
@@ -8,7 +12,7 @@
       font-size: 15px;
       height: 35px;
       margin: 0;
-      opacity: .3;
+      opacity: .5;
       padding: 7px 10px;
 
       &:hover {
@@ -22,9 +26,28 @@
   }
 
   section {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    background-color: #fff;
+    padding-bottom: 40px;
+    padding-top: 40px;
+
+    &.gray {
+      border-bottom: 2px solid #e5e5e5;
+      border-top: 2px solid #e5e5e5;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      padding-left: 100px;
+      padding-right: 100px;
+
+      h2 {
+	margin-top: 0;
+      }
+
+      p:last-child {
+	margin-bottom: 0;
+      }
+    }
   }
 
   section:last-child {
@@ -33,30 +56,78 @@
 
   p, li {
     font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 21px;
+    font-size: 20px;
+  }
+
+  footer {
+    padding-top: 10px;
+
+    p {
+      font-size: 16px;
+
+      a {
+	color: #1cd9b3;
+
+	&:hover {
+	  color: #34e5c1;
+	}
+      }
+    }
+
+    .text-muted {
+      color: #ffffff;
+    }
   }
 
   #lead {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     .jumbotron {
-      margin-top: 35px;
+      margin: 80px auto;
+
+      h1 {
+	margin-bottom: 0.8em;
+      }
+
+      p {
+	font-size: 24px;
+      }
+    }
+  }
+}
+
+#minitest.ck-landing {
+  #lead {
+    background-clip: border-box;
+    background-image: url('/images/minitest_cookbook_code_bg.png');
+    background-repeat: none;
+    background-size: cover;
+
+    .jumbotron {
+      background-color: rgba(20, 50, 50, 0.8);
+      border: 1px solid #666;
+
+      h1, p {
+	color: #eeeeff;
+      }
     }
   }
 
   #description {
     .cover-image, .mailchimp {
       float: right;
-      margin: 30px 0 20px 50px;
-      margin-left: 50px;
-      margin-top: 30px;
       width: 50%;
     }
 
     .cover-image {
-      padding-top: 20px;
       text-align: center;
     }
 
     .mailchimp {
+      margin-top: 30px;
       padding: 20px;
 
       h3 {
@@ -112,7 +183,26 @@
     }
   }
 
-  #author .container {
+  #toc {
+    h2, p {
+      text-align: center;
+    }
+
+    p {
+      @extend .col-md-10;
+      @extend .col-md-offset-1;
+    }
+
+    .left-col, .right-col {
+      @extend .col-md-5;
+      @extend .col-md-offset-1;
+    }
+
+    .left-col {
+    }
+  }
+
+  section#author .container {
     h2 {
       margin-top: 0;
     }
@@ -125,7 +215,7 @@
     }
     div {
       display: inline-block;
-      width: 750px;
+      width: 600px;
     }
   }
 
