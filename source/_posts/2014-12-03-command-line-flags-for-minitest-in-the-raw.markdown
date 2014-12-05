@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Minitest in the Buff"
+title: "Command Line Flags for Minitest in the Raw"
 date: 2014-12-03 11:27:09 +0100
 comments: true
 categories: [development, Ruby, Minitest, "command line", "verbose", "single test"]
-description: Minitest offers little in the way of frills in many places, but there are a few command line options that you should know about
+description: Minitest can be used to invoke your tests directly from the Ruby interpreter, and it has its own command line options that can be used for certain common use cases encountered by many Rubyists.
 ---
-If you're like most Ruby devs, you probably run your test suite on the command line using `rake test`.  It's a fast way to run all tests which is probably what you want to do most of the time, and it's the default task for Rails projects and well documented for other types of Ruby projects.  Every once in a while though, you want more control over the tests that run.  Rake might not give you what you need in these cases, but fortuntely, Minitest provides some nice but not very well known options that can be used when called directly from the command line to help you tailor your test run.<!--more-->
+If you're like most Ruby devs, you probably run your test suite on the command line using `rake test`.  In addition to being a fast way to run all tests which is probably what you want to do most of the time, it's also the default task for Rails projects and well documented for other types of Ruby projects.  Every once in a while though, you want more control over the tests that run.  Rake might not give you what you need in these cases, but fortuntely, Minitest provides some nice but not widely known options that can be used directly from the command line to help you tailor your test runs.<!--more-->
 
 For the following examples, I'm using a simple standalone project, but the same approach will work for any Ruby or Rails project.  I've written a single example test case that looks like this:
 
@@ -42,17 +42,17 @@ Rake::TestTask allows you to run a single test case using the `TEST` environment
 rake test TEST=test/example_test.rb
 {% endcodeblock %}
 
-In this case though, I would need to create a Rakefile with a `test` task that's configured for my project.  In most cases, I'll probably do just that, but I could also just ask Minitest to do the same thing by entering the following on the command line:
+To make this work, I'll need to create a Rakefile with a `test` task configured for my project.  In most cases, I'll probably do just that, but I could also just require Minitest on the command line and get a similar result:
 
 {% codeblock lang:bash %}
 ruby -r minitest/autorun test/example_test.rb
 {% endcodeblock %}
 
-It's a little wordier than `rake test`, but all it's saying here is: fire up the Ruby interpreter, require `minitest/autorun`, and execute the program at `test/example_test.rb`.
+It's slightly wordier than `rake test`, but all it's saying here is: fire up the Ruby interpreter, require `minitest/autorun`, and execute the program at `test/example_test.rb`.
 
 ## Display More Detailed Reports ##
 
-Minitest also supports a `--verbose` or `-v` option which can be specified after the path to the test case file:
+Minitest also supports a `--verbose` option which can be specified after the path to the test case file:
 
 {% codeblock lang:bash %}
 ruby -r minitest/autorun test/example_test.rb -v
@@ -79,15 +79,17 @@ RuntimeError:
 5 runs, 4 assertions, 0 failures, 1 errors, 0 skips
 {% endcodeblock %}
 
-## Run Only Selected Tests ##
+{% include minitest_cookbook_plug.html %}
 
-Using the `--name` or `-n` option, you can also specify the name of a particular test or tests you want to run.  Let's say, for example, that we only want to run the `test_pass` test.  We could type the following:
+## Run Selected Tests Only ##
+
+Using the `--name` flag, you can also specify the name of a particular test or tests you want to run.  Let's say, for example, that we only want to run the `test_pass` test.  We could type the following:
 
 {% codeblock lang:bash %}
 ruby -r minitest/autorun test/example_test.rb -v -n test_pass
 {% endcodeblock %}
 
-Minitest select out only that test, and we get the following as a result:
+Minitest converts my input to a Regexp object and uses it to select just the test we want:
 
 {% codeblock lang:bash %}
 # Running:
@@ -99,13 +101,13 @@ Finished in 0.000751s, 1331.7157 runs/s, 1331.7157 assertions/s.
 1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
 {% endcodeblock %}
 
-Since Minitest converts this parameter into a Regexp object, we also have the option of passing a regular expression literal that will indicate a pattern to match against test names.  If we were to type the following:
+Using regular expressions, we also have the option of passing a a pattern that filters test method names that should be included in the run.  So for example, typing the following:
 
 {% codeblock lang:bash %}
 ruby -r minitest/autorun -Ilib:test test/example_test.rb -v -n /operation/
 {% endcodeblock %}
 
-Minitest should select any test with the string `operation` in the name as shown below:
+Would indicate to Minitest that only tests containing "operation" should be included:
 
 {% codeblock lang:bash %}
 # Running:
@@ -119,7 +121,7 @@ Finished in 1.333025s, 2.2505 runs/s, 2.2505 assertions/s.
 3 runs, 3 assertions, 0 failures, 0 errors, 0 skips
 {% endcodeblock %}
 
-This can be particularly useful when working with the spec-style Minitest syntax since the tests are named by convention as a concatenation of all the `describe` block names.  Let's suppose we convert the test we've been using into a spec as follows:
+This is particularly useful when using Minitest::Spec syntax since tests are named by convention as a concatenation of all the `describe` block names.  So let's suppose we convert the test we've been using into a spec as follows:
 
 {% codeblock ruby test/example_spec.rb %}
 describe "Example" do
@@ -149,7 +151,7 @@ describe "Example" do
 end
 {% endcodeblock %}
 
-Running with no name specified shows us how the names for the tests are generated by Minitest.
+Running with only the `--verbose` flag shows the names generated for each test:
 
 {% codeblock lang:bash %}
 # Running:
@@ -170,10 +172,10 @@ RuntimeError:
 5 runs, 4 assertions, 0 failures, 1 errors, 0 skips
 {% endcodeblock %}
 
-We can filter the tests that are run by passing part of the name corresponding to the block we're interested in as a parameter:
+You can filter the tests that are run by passing part of the name corresponding to the block you want to focus on as a parameter:
 
 {% codeblock lang:bash %}
-ruby -r minitest/autorun -Ilib:test test/example_spec.rb -v -n /Example::Operations/
+ruby -r minitest/autorun -Ilib:test test/example_spec.rb -v -n /Operations/
 {% endcodeblock %}
 
 That would yield the following output similar to the previous one:
@@ -190,9 +192,10 @@ Finished in 1.331907s, 2.2524 runs/s, 2.2524 assertions/s.
 3 runs, 3 assertions, 0 failures, 0 errors, 0 skips
 {% endcodeblock %}
 
-**Note:** If I want to specify a name pattern that contains whitespace, I need to either escape the spaces within my regular expression (`/Example::Things\ that\ pass/`) or enclose the name in quotes (`/"Example:: Things that pass"/`).
+**Note:** If I want to specify a name pattern that contains whitespace as can happen with spec-style tests, these need to be escaped (`/Example::Things\ that\ pass/`) or quoted (`/"Example:: Things that pass"/`) within my regular expression.
 
 
-None of these is likely to change the way you test, of course.  Think of them instead as nice additions that give you a few additional options for tailoring your test runs.
+I still try to keep my test suite fast enough to run as a whole most of the time, so this isn't something that I need every day, but [running a single test is a common problem for more than a few people](http://stackoverflow.com/questions/5285711/is-it-possible-to-run-a-single-test-in-minitest) that, world-changing or not, it's nice to have the option available.
+
 
 {% include mailchimp/minitest_after_post.html %}
