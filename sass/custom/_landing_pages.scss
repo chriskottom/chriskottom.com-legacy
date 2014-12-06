@@ -100,11 +100,23 @@
 }
 
 #minitest.ck-landing {
+  /*
+  section:not(.gray) {
+    background-image: url('/images/grey.png');
+    background-color: #fff;
+  }
+  */
+
   #lead {
     background-clip: border-box;
     background-image: url('/images/minitest_cookbook_code_bg.png');
     background-repeat: none;
     background-size: cover;
+
+    em {
+      color: #fff98f;
+      font-weight: bold;
+    }
 
     .jumbotron {
       background-color: rgba(20, 50, 50, 0.8);
@@ -131,6 +143,7 @@
       padding: 20px;
 
       h3 {
+	font-size: 24px;
 	margin-top: 0;
       }
 
@@ -154,6 +167,10 @@
 	.button {
 	  margin-top: -3px;
 	  padding: 8px 20px;
+	}
+
+	#mce-responses .response {
+	  margin-top: 1em;
 	}
       }
     }
