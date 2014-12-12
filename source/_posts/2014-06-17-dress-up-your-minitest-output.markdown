@@ -146,7 +146,7 @@ gem 'minitest', group: :test
 gem 'minitest-reporters', git: 'git@github.com:kern/minitest-reporters.git', group: :test
 {% endcodeblock %}
 
-{% include mailchimp/minitest_after_post.html %}
+{% include convertkit/minitest_after_post.html %}
 
 [1]: http://rspec.info/
 [2]: https://github.com/seattlerb/minitest

@@ -129,9 +129,13 @@
   }
 
   #description {
-    .cover-image, .mailchimp {
+    .cover-image, .mailchimp, .convertkit {
       float: right;
       width: 50%;
+    }
+
+    .convertkit {
+      margin: 5px 0 10px 30px;
     }
 
     .cover-image {
@@ -141,6 +145,9 @@
     .mailchimp {
       margin-bottom: 30px;
       margin-top: 30px;
+    }
+
+    .mailchimp {
       padding: 20px;
 
       h3 {

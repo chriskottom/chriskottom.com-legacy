@@ -50,12 +50,14 @@ ruby -r minitest/autorun test/example_test.rb
 
 It's slightly wordier than `rake test`, but all it's saying here is: fire up the Ruby interpreter, require `minitest/autorun`, and execute the program at `test/example_test.rb`.
 
+**Edit:** In real life though, as Ryan Davis points out in the comments, no one in their right mind would ever put the required Minitest file on the command line like this.  You'd instead require `autorun.rb` in the test case file directly or in a common test helper which would then be required in all tests.  Assume for the remaining examples that we've done exactly that.
+
 ## Display More Detailed Reports ##
 
 Minitest also supports a `--verbose` option which can be specified after the path to the test case file:
 
 {% codeblock lang:bash %}
-ruby -r minitest/autorun test/example_test.rb -v
+ruby test/example_test.rb -v
 {% endcodeblock %}
 
 Specifying this option replaces the usual dot-dot-dot report output with the full name of each test, the time it took to run it, and the result indicator as shown below:
@@ -86,7 +88,7 @@ RuntimeError:
 Using the `--name` flag, you can also specify the name of a particular test or tests you want to run.  Let's say, for example, that we only want to run the `test_pass` test.  We could type the following:
 
 {% codeblock lang:bash %}
-ruby -r minitest/autorun test/example_test.rb -v -n test_pass
+ruby test/example_test.rb -v -n test_pass
 {% endcodeblock %}
 
 Minitest converts my input to a Regexp object and uses it to select just the test we want:
@@ -104,7 +106,7 @@ Finished in 0.000751s, 1331.7157 runs/s, 1331.7157 assertions/s.
 Using regular expressions, we also have the option of passing a a pattern that filters test method names that should be included in the run.  So for example, typing the following:
 
 {% codeblock lang:bash %}
-ruby -r minitest/autorun -Ilib:test test/example_test.rb -v -n /operation/
+ruby -Ilib:test test/example_test.rb -v -n /operation/
 {% endcodeblock %}
 
 Would indicate to Minitest that only tests containing "operation" should be included:
@@ -124,6 +126,8 @@ Finished in 1.333025s, 2.2505 runs/s, 2.2505 assertions/s.
 This is particularly useful when using Minitest::Spec syntax since tests are named by convention as a concatenation of all the `describe` block names.  So let's suppose we convert the test we've been using into a spec as follows:
 
 {% codeblock ruby test/example_spec.rb %}
+require 'minitest/autorun'
+
 describe "Example" do
   describe "Operations" do
     it "should do a fast thing" do
@@ -175,7 +179,7 @@ RuntimeError:
 You can filter the tests that are run by passing part of the name corresponding to the block you want to focus on as a parameter:
 
 {% codeblock lang:bash %}
-ruby -r minitest/autorun -Ilib:test test/example_spec.rb -v -n /Operations/
+ruby test/example_spec.rb -v -n /Operations/
 {% endcodeblock %}
 
 That would yield the following output similar to the previous one:
@@ -197,5 +201,4 @@ Finished in 1.331907s, 2.2524 runs/s, 2.2524 assertions/s.
 
 I still try to keep my test suite fast enough to run as a whole most of the time, so this isn't something that I need every day, but [running a single test is a common problem for more than a few people](http://stackoverflow.com/questions/5285711/is-it-possible-to-run-a-single-test-in-minitest) that, world-changing or not, it's nice to have the option available.
 
-
-{% include mailchimp/minitest_after_post.html %}
+{% include convertkit/minitest_after_post.html %}
