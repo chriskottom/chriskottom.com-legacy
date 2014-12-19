@@ -75,8 +75,6 @@ end
 
 I'll also use the minimal record and the realistic record to test miscellaneous methods such as virtual attributes, business logic, and so on.  By having something that seems close to reality, I'll see if my code works well for most of the happy-case scenarios, while using the minimum valid model shows me where my logic could be made more robust.  The objective here is more about development than testing - basically being sure I'm designing the empty states for model behavior as well as the "normal" state.
 
-{% include why_test_plug.html %}
-
 The last category requires some further explanation.  For model behavior that's affected by state, you'll want to ensure that you've paid attention to the kinds of edge cases that can come up, for example:
 
 * State violations - e.g. marking a task as complete when it's already been completed, selling an item that's already been sold, etc.

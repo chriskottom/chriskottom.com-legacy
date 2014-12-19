@@ -68,8 +68,6 @@ describe 'Thing' do
 end
 {% endcodeblock %}
 
-{% include minitest_cookbook_plug2.html %}
-
 ## What Exactly Does :let Do Again? ##
 
 Using `let` provides an alternate and some would say more elegant way of setting up testing state with a more declarative syntax.  The following would be comparable to the example in the previous section.

@@ -51,8 +51,6 @@ end
 
 For the sake of manageability, I've written my assertions into a separate file which I can then include into my ```test/test_helper``` file.
 
-{% include minitest_cookbook_plug.html %}
-
 ## From assertion to expectation ##
 
 If your particular brand of poison falls more to the spec-style syntax like mine does, don't worry.  Now that we've got our new assertions written, it's stupid simple to carry our customizations over to Minitest::Spec-land.

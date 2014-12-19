@@ -81,8 +81,6 @@ RuntimeError:
 5 runs, 4 assertions, 0 failures, 1 errors, 0 skips
 {% endcodeblock %}
 
-{% include minitest_cookbook_plug.html %}
-
 ## Run Selected Tests Only ##
 
 Using the `--name` flag, you can also specify the name of a particular test or tests you want to run.  Let's say, for example, that we only want to run the `test_pass` test.  We could type the following:
