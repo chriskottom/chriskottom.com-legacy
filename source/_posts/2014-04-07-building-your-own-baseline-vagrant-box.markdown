@@ -4,7 +4,6 @@ title: "Building Your Own Baseline Vagrant Box"
 date: 2014-04-07 09:30:18 +0200
 comments: true
 categories: [development, DevOps, Vagrant, Chef, 'Chef Solo', Berkshelf, example, tutorial]
-featured: 500
 description: A look at how to build and start using a customized virtual machine image for doing your own development with Vagrant using Chef and Berkshelf
 ---
 {% img no-border right /images/old_vagrant_logo.png Vagrant %}
