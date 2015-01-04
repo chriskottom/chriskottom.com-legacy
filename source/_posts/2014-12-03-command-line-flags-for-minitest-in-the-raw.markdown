@@ -52,6 +52,8 @@ It's slightly wordier than `rake test`, but all it's saying here is: fire up the
 
 **Edit:** In real life though, as Ryan Davis points out in the comments, no one in their right mind would ever put the required Minitest file on the command line like this.  You'd instead require `autorun.rb` in the test case file directly or in a common test helper which would then be required in all tests.  Assume for the remaining examples that we've done exactly that.
 
+{% include minitest_cookbook_plug.html %}
+
 ## Display More Detailed Reports ##
 
 Minitest also supports a `--verbose` option which can be specified after the path to the test case file:
@@ -199,4 +201,7 @@ Finished in 1.331907s, 2.2524 runs/s, 2.2524 assertions/s.
 
 I still try to keep my test suite fast enough to run as a whole most of the time, so this isn't something that I need every day, but [running a single test is a common problem for more than a few people](http://stackoverflow.com/questions/5285711/is-it-possible-to-run-a-single-test-in-minitest) that, world-changing or not, it's nice to have the option available.
 
+{% comment %}
 {% include convertkit/minitest_after_post.html %}
+{% endcomment %}
+{% include minitest_cookbook_plug2.html %}
