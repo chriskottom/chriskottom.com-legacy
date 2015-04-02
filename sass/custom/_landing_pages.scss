@@ -23,6 +23,22 @@
 	-webkit-transition: opacity .25s ease-in-out;
       }
     }
+
+    &.pre-launch {
+      font-size: 1.4em;
+
+      strong {
+	color: #fff98f;
+      }
+
+      a.navbar-brand {
+	opacity: 1.0;
+
+	&:hover {
+	  color: inherit;
+	}
+      }
+    }
   }
 
   section {
@@ -125,6 +141,11 @@
       h1, p {
 	color: #eeeeff;
       }
+
+      .buy-button {
+	float: right;
+	margin: 25px 0 50px 75px;
+      }
     }
   }
 
@@ -225,6 +246,12 @@
 
     .left-col {
     }
+
+    .buy-button {
+      @extend .col-md-12;
+      margin-top: 30px;
+      text-align: center;
+    }
   }
 
   section#author .container {
@@ -250,4 +277,34 @@
     width: 50%;
   }
 
+}
+
+.buy-button {
+  text-align: center;
+
+  i.glyphicon {
+    font-size: 36px;
+    margin-right: 25px;
+  }
+
+  span {
+    font-size: 30px;
+    font-weight: bold;
+
+    small {
+      font-size: 24px;
+      font-weight: normal;
+    }
+  }
+
+  a.free-chapters {
+    color: #fff98f;
+    display: block;
+    margin-top: 5px;
+
+    &:hover {
+      color: #fffccc;
+      text-decoration: none;
+    }
+  }
 }
