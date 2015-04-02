@@ -2,10 +2,6 @@
   <div class="container">
     <h2>Introducing: The Minitest Cookbook</h2>
 
-    <div class="convertkit">
-      {% include minitest_cookbook/ck_form.html %}
-    </div>
-
     <p>
       If you want to use even the most simple tool effectively, you
       need to know how to hold it.  That's why I'm writing <b>The
@@ -13,12 +9,12 @@
       skill levels master the techniques they need to write clear,
       maintainable tests and help others to do the same.  That process
       begins with a set of fundamentals where you'll learn how to:
+
       <ul>
 	<li>Write tests using both assertions and specs</li>
 	<li>Structure your tests for clarity and confidence</li>
-	<li>Implement boundary checks, fuzzing, and other testing techniques</li>
 	<li>Validate your code with assertions and expectations</li>
-	<li>Use mocks, stubs, and other kinds of doubles</li>
+	<li>Use mocks, stubs, and other kinds of test doubles</li>
 	<li>Effectively manage test data</li>
 	<li>Share common code between tests</li>
 	<li>Run one test case or your whole suite</li>
@@ -33,57 +29,16 @@
       want to throw at it.  It's based around a simple architecture
       and supports customizations via plugins, so you'll be able to
       trick out your testing stack with third-party gems from a large
-      and growing ecosystem of plugins.  Later sections of the book
+      and growing ecosystem of plugins.
+      Later sections of the book
       will deal with some more advanced topics on a deeper level
-      including:
+      including how to:
+      <ul>
+	<li>Test every part of your Rails application</li>
+	<li>Customize your test reports with better, more actionable information</li>
+	<li>Cover hard-to-reach code that you couldn't test before</li>
+	<li>Write custom assertions and expectations specifically for your application</li>
+      </ul>
     </p>
-
-    <div>
-      <div class="left-col">
-	<h3>Rails application testing</h3>
-	<p>
-	  Piecing together the right way to test your Rails projects
-	  relying only on a bunch of disconnected blog posts and
-	  READMEs is a sure way to make your head hurt.  Let me show
-	  you how to set up your testing stack and practical recipes
-	  for testing every part of your application.
-	</p>
-      </div>
-
-      <div class="right-col">
-	<h3>Writing and sharing your own extensions</h3>
-	<p>
-	  Minitest's compactness and simplicity offer plenty of
-	  opportunities for customizing and changing the framework's
-	  basic functions.  We'll peek into the source code and look
-	  at some popular plugins to see how you can extend Minitest
-	  to meet your own needs.
-	</p>
-      </div>
-    </div>
-
-    <div>
-      <div class="left-col">
-	<h3>Optimizing test performance</h3>
-	<p>
-	  Developers will run a fast test suite more often than a slow
-	  one, and tests that run more often are more effective than
-	  those that don't.  I'll show you how to speed up your
-	  existing tests as well as the techniques and tricks to avoid
-	  writing slow tests in the first place.
-	</p>
-      </div>
-
-      <div class="right-col">
-	<h3>Building your own testing DSL</h3>
-	<p>
-	  Minitest's standard assertions and expectations are a great
-	  start, but you see that you can build up a highly targeted
-	  custom testing vocabulary that maps closely to your
-	  application's domain and allows you to write tests that are
-	  more expressive and compact.
-	</p>
-      </div>
-    </div>
   </div>
 </section>
