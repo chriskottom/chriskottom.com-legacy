@@ -146,10 +146,7 @@ gem 'minitest', group: :test
 gem 'minitest-reporters', git: 'git@github.com:kern/minitest-reporters.git', group: :test
 {% endcodeblock %}
 
-{% comment %}
-{% include convertkit/minitest_after_post.html %}
-{% endcomment %}
-{% include minitest_cookbook_end_plug.html %}
+{% include convertkit/minitest_after_post2.html %}
 
 [1]: http://rspec.info/
 [2]: https://github.com/seattlerb/minitest

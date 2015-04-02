@@ -151,7 +151,7 @@ OMG, Fixtures have enjoyed such a resurgence that people have been blogging abou
 * [7 Reasons Why I'm Sticking with Minitest and Fixtures in Rails][4] - by Brandon Hilkert
 * [Time to Bring Back Fixtures][5] - by Jason Roelofs
 
-{% include convertkit/minitest_after_post.html %}
+{% include convertkit/minitest_after_post2.html %}
 
 [1]: https://github.com/thoughtbot/factory_girl
 [2]: http://github.com/notahat/machinist

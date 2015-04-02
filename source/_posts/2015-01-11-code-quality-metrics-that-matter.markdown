@@ -10,7 +10,7 @@ description: These are some of the tools I've used to help keep ta
 
 As programmers, we spend a lot of time and bits debating and preaching about the merits of good code and the evils of bad code and the differences between the two.  And as Rubyists, we sometimes get a little... What?  Self-righteous?  Precious about our code?  Strong tendency to bikeshed?
 
-OK, we've all probably been guilty of that at times.  Most Ruby and Rails hackers I've worked with and known over the years show a lot of care and craft when it comes to their code, but we do it all in the service of building something that lasts.  This is why we go on about skinny controllers and presenters versus helpers.  It's [why we write tests](http://chriskottom.com/blog/2014/08/why-i-test/).  And it's a big part of the motivtion that has led to the creation of so many tools for evaluating source code quality.  This article is going to talk about a few of them that I've found useful at various times.<!--more-->
+OK, we've all probably been guilty of that at times.  Most Ruby and Rails hackers I've worked with and known over the years show a lot of care and craft when it comes to their code, but we do it all in the service of building something that lasts.  This is why we go on about skinny controllers and presenters versus helpers.  It's [why we write tests](http://chriskottom.com/blog/2014/08/why-i-test/).  And it's a big part of the motivation that has led to the creation of so many tools for evaluating source code quality.  This article is going to talk about a few of them that I've found useful at various times.<!--more-->
 
 But before we launch into that, there's an important question that needs answering:
 
@@ -93,4 +93,4 @@ A word of caution: what they say about [whatever gets measured gets optimized](h
 
 Don't follow the numbers blindly.  You know your code better than the tool does, but let the feedback they give you inform and influence your work to make it better.
 
-{% include convertkit/minitest_after_post.html %}
+{% include convertkit/minitest_after_post2.html %}

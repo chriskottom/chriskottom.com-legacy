@@ -166,7 +166,7 @@ The result is a Facebook API client that's shared between all test cases in the 
 
 The fact that this *can* be done doesn't mean that it *should* be done though.  Before using a technique such as this though, you need to ask yourself what effect it will have on your suite.  Tests should be written as much as possible in a single file with as much verbosity and repetition as is needed to convey their meaning, and I'd personally be really reluctant to distribute code that's essential to a clear understanding of my test case into other files.
 
-{% include convertkit/minitest_after_post.html %}
+{% include convertkit/minitest_after_post2.html %}
 
 [1]: https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks
 [2]: https://en.wikipedia.org/wiki/XUnit

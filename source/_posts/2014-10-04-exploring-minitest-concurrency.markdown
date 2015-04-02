@@ -391,10 +391,7 @@ YMMV when it comes to implementing (or not) concurrent execution within your own
 * [Concurrency in Ruby Explained][7] by Matt Aimonetti
 * [More about MRI and the GIL][6] by Jesse Storimer
 
-{% comment %}
-{% include convertkit/minitest_after_post.html %}
-{% endcomment %}
-{% include minitest_cookbook_plug.html %}
+{% include convertkit/minitest_after_post2.html %}
 
 [1]: https://github.com/seattlerb/minitest
 [2]: https://github.com/seattlerb/minitest/blob/master/lib/minitest/hell.rb
