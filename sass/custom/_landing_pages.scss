@@ -145,6 +145,14 @@
       .buy-button {
 	float: right;
 	margin: 25px 0 50px 75px;
+
+	a.free-chapters {
+	  color: #fff98f;
+
+	  &:hover {
+	    color: #fffccc;
+	  }
+	}
       }
     }
   }
@@ -251,6 +259,14 @@
       @extend .col-md-12;
       margin-top: 30px;
       text-align: center;
+
+      a.free-chapters {
+	color: #139077;
+
+	&:hover {
+	  text-decoration: underline;
+	}
+      }
     }
   }
 
