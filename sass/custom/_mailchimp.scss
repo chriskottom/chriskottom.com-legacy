@@ -1,89 +1,73 @@
-.mailchimp {
-  background: #f3f6f6;
-  border: 2px solid #6aa5b4;
-  border-radius: 7px;
-  padding: 0 25px 25px 25px;
-
-  h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
+.mailchimp-modal {
+  .modal-dialog {
+    width: 450px;
   }
 
-  p {
-    font-size: 16px;
-    margin-bottom: 20px;
+  .modal-header, .modal-footer {
+    @extend .clearfix;
+    background-color: #596683;
+    min-height: 10px;
   }
 
-  .indicates-required {
-    @extend .pull-right;
-    font-size: 14px;
-  }
+  .modal-header {
+    background-color: #596683;
+    color: #ffffff;
+    font-size: 0.7em;
+    padding: 8px;
 
-  form {
-    padding-top: 0;
-
-    label, input {
-      font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-
-    label {
-      @extend .control-label;
-      font-size: 14px;
-    }
-
-    .mce_inline_error {
-      font-size: 14px;
-    }
-
-    input:not([type=submit]) {
-      @extend .form-control;
-    }
-
-    label.error {
-      @extend .text-warning;
-      font-size: 14px;
-      font-weight: normal;
-      margin-left: 3px;
-    }
-
-    input.error {
-      @extend .has-error;
-    }
-
-    input.button, input[type=submit], input[type=button] {
-      @extend .btn;
-      @extend .btn-warning;
-      color: #f6f6f6;
-      font-size: 1.2em;
-      font-weight: bold;
-      height: auto;
-      //margin-top: 20px;
-    }
-
-    .mc-field-group {
-      @extend .form-group;
-      margin-bottom: 10px;
-
-      &.required {
-	@extend .has-feedback;
-
-	span.asterisk {
-	  @extend .form-control-feedback;
-	}
+    button.close {
+      span {
+	color: #ffffff;
+	font-size: 80%;
+	padding: 0;
       }
     }
   }
 
-  #notification-container {
-    margin-top: 15px;
+  .modal-footer {
+    padding: 0;
   }
-}
 
-.hate-spam {
-  @extend .center-block;
-  @extend .text-info;
-  color: #333;
-  margin-top: 20px;
-  text-align: center;
+  .modal-body {
+    padding: 20px;
+
+    h3 {
+      margin: 0 0 16px 0;
+    }
+
+    .description {
+      clear: both;
+      margin-bottom: 20px;
+
+      img.cover {
+	float: left;
+	margin: 10px 35px 35px 0;
+      }
+
+      & > p {
+	color: #222222;
+	font-size: 17px;
+	text-align: left;
+      }
+    }
+
+    form {
+      border-top: thin solid #96a2bb;
+      clear: both;
+      display: block;
+
+      .form-group {
+	margin-bottom: 0;
+      }
+
+      button, .btn {
+	@extend .btn-lg;
+	background: #8d0707;
+	color: #ffffff;
+	padding: 12px 10px;
+	text-shadow: 1px 1px 1px rgba(175, 175, 175, 0.7);
+	width: 100%;
+      }
+    }
+  }
 }
