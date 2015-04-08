@@ -1,0 +1,111 @@
+<form action="//chriskottom.us7.list-manage.com/subscribe/post-json?u=cb97c3f32295c9480bdb216ad&id=5a7e508a66&" method="get"
+      id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+  <div class="form-group mc-field-group input-lg required-field-block">
+    <input type="email" id="EMAIL" name="EMAIL" class="form-control required email" placeholder="Email" required>
+    <div class="required-icon"><div class="text">*</div></div>
+  </div>
+
+  <div class="form-group mc-field-group input-lg required-field-block">
+    <input type="text" id="FNAME" name="FNAME" class="form-control required" placeholder="First Name" required>
+    <div class="required-icon"><div class="text">*</div></div>
+  </div>
+
+  <div class="form-group mc-field-group input-lg">
+    <input type="text" id="LNAME" name="LNAME" class="form-control" placeholder="Last Name">
+  </div>
+
+  <div id="mce-responses" class="clear">
+    <div class="response" id="mce-error-response" style="display:none"></div>
+    <div class="response" id="mce-success-response" style="display:none"></div>
+  </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+  <div style="position: absolute; left: -5000px;"><input type="text" name="b_cb97c3f32295c9480bdb216ad_5a7e508a66" tabindex="-1" value=""></div>
+
+  <div class="form-group mc-field-group input-lg">
+    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-danger">YES, send my free chapters</button>
+  </div>
+</form>
+
+<script>
+  $(function() {
+    $('.required-icon').tooltip({
+      placement: 'left',
+      title: 'Required field'
+    });
+  });
+
+
+ function validateInput(form) {
+   return true; 
+ }
+
+ function register(form) {
+   $.ajax({
+     type: form.attr('method'),
+     url: form.attr('action'),
+     data: form.serialize(),
+     cache: false,
+     dataType: 'jsonp',
+     jsonp: 'c',
+     contentType: "application/json; charset=utf-8",
+     error: function(err) { respondToError(err); },
+     success: function(data) { respondToSuccess(data); }
+   });
+ }
+
+ function respondToError(err) {
+   console.log("Calling respondToError with: " + err);
+   displayErrorMessage("Could not connect to the registration server. Please try again later.", "");
+   console.log(err);
+ }
+
+ function respondToSuccess(data) {
+   console.log("Calling respondToSuccess with: " + data);
+   if (data.result != "success") {
+     displayErrorMessage("Sorry, the registration server is unable to process your request right now.", data.msg);
+   }
+   else {
+     displaySuccessMessage(data.msg);
+   }
+ }
+
+ function displayMessage(msg, selector) {
+   var msgElem = $(selector);
+   var responsesElem = $("#mce-responses");
+
+   if (responsesElem.is(":visible")) {
+     responsesElem.fadeOut(function () {
+       responsesElem.find(".response").text("");
+       msgElem.text(msg);
+       msgElem.show();
+       responsesElem.fadeIn();
+     });
+   }
+   else {
+     responsesElem.find(".response").text("");
+     msgElem.text(msg);
+     msgElem.show();
+     responsesElem.fadeIn();
+   }
+ }
+
+ function displayErrorMessage(msg, exception) {
+   displayMessage(msg, "#mce-error-response");
+   console.log('Error in registration: ' + exception);
+ }
+
+ function displaySuccessMessage(msg) {
+   displayMessage(msg, "#mce-success-response");
+ }
+
+ $(document).ready( function () {
+   $('form#mc-embedded-subscribe-form').each(function() {
+     var form = $(this);
+     var button = form.find("button#mc-embedded-subscribe");
+     button.bind('click', function ( event ) {
+       if ( event ) event.preventDefault();
+       if ( validateInput(form) ) { register(form); }
+     });
+   });
+ });
+</script>

@@ -2,46 +2,19 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	  <span aria-hidden="true">&times;</span>
+	</button>
       </div>
       <div class="modal-body">
-	<h3>Download two chapters FREE</h3>
-
-	<div class="description">
-	  <img class="cover" alt="The Minitest Cookbook" src="/images/minitest_cookbook_cover_form.jpg">
-	  <p>If you already write tests, I want your tests to be better.</p>
-	  <p>If you don't write tests, I want to help you get past the obstacles holding you back.</p>
-	  <p>Sign up for my mailing list here, and receive the first two chapters of The Minitest Cookbook&nbsp;<strong>free</strong>.</p>
+	<div class="mtc-description">
+	  {% include mailchimp/mtc_description.html %}
 	</div>
-	<div class="form">
-	  <form class="form-horizontal">
-	    <div class="form-group input-lg required-field-block">
-              <input type="text" id="email" name="email" class="form-control" placeholder="Email" required>
-	      <div class="required-icon"><div class="text">*</div></div>
-	    </div>
-	    <div class="form-group input-lg required-field-block">
-              <input type="text" id="name" name="name" class="form-control" placeholder="First Name" required>
-	      <div class="required-icon"><div class="text">*</div></div>
-	    </div>
-	    <div class="form-group input-lg">
-              <input type="text" id="name" name="name" class="form-control" placeholder="Last Name">
-	    </div>
-	    <div class="form-group input-lg">
-              <button type="submit" class="btn btn-danger">YES, send my free chapters</button>
-	    </div>
-          </form>
+	<div class="mtc-form" id="mc_embed_signup">
+	  {% include mailchimp/mtc_free_chapters_form.html %}
 	</div>
       </div>
       <div class="modal-footer"></div>
     </div>
   </div>
 </div>
-
-<script>
-  $(function() {
-    $('.required-icon').tooltip({
-      placement: 'left',
-      title: 'Required field'
-    });
-  });
-</script>
