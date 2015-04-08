@@ -54,11 +54,13 @@
   border-right: 2px solid #aaa;
   border-top: 10px solid #596683;
   margin: 0px;
+  overflow: hidden;
 
   .mtc-description {
     @extend .col-md-7;
     border-right: thin solid #96a2bb;
-    padding: 0;
+    margin-bottom: -99999px;
+    padding: 0 0 99999px 0;
 
     & > div {
       margin: 20px;
@@ -103,6 +105,7 @@
 .mtc-form form {
   clear: both;
   display: block;
+
 
   .form-group {
     line-height: 0.8;
@@ -155,5 +158,14 @@
   label.error {
     color: #aa0000;
     font-size: 14px;
+  }
+
+  .no-spam {
+    color: #992222;
+    display: block;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+    width: 100%;
   }
 }
