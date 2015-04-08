@@ -54,18 +54,31 @@
  }
 
  function respondToError(err) {
-   console.log("Calling respondToError with: " + err);
    displayErrorMessage("Could not connect to the registration server. Please try again later.", "");
+   $("button#mc-embedded-subscribe").removeAttr("disabled");
    console.log(err);
  }
 
  function respondToSuccess(data) {
-   console.log("Calling respondToSuccess with: " + data);
    if (data.result != "success") {
      displayErrorMessage("Sorry, the registration server is unable to process your request right now.", data.msg);
    }
    else {
      displaySuccessMessage(data.msg);
+     hideModal(15);
+   }
+   $("button#mc-embedded-subscribe").removeAttr("disabled");
+ }
+
+ function hideModal(seconds) {
+   seconds = seconds || 10;
+   var modal = $(".mailchimp-modal");
+   if (modal.size() > 0) {
+     setTimeout(function () {
+       modal.modal("hide");
+       modal.find("#mc-embedded-subscribe-form").trigger("reset");
+       modal.find("#mce-responses .response").text("");
+     }, seconds * 1000);
    }
  }
 
@@ -104,7 +117,10 @@
      var button = form.find("button#mc-embedded-subscribe");
      button.bind('click', function ( event ) {
        if ( event ) event.preventDefault();
-       if ( validateInput(form) ) { register(form); }
+       if ( validateInput(form) ) {
+	 $(this).attr('disabled','disabled');
+	 register(form);
+       }
      });
    });
  });
