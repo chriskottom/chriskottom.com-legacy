@@ -36,11 +36,55 @@
   }
 }
 
+.mailchimp-modal {
+  .mtc-description {
+    margin-bottom: 20px;
+  }
+
+  .mtc-form {
+    border-top: thin solid #96a2bb;
+    padding: 25px 20px;
+  }
+}
+
+.mailchimp-panel {
+  @extend .row;
+  border-bottom: 5px solid #596683;
+  border-left: 2px solid #aaa;
+  border-right: 2px solid #aaa;
+  border-top: 10px solid #596683;
+  margin: 0px;
+
+  .mtc-description {
+    @extend .col-md-7;
+    border-right: thin solid #96a2bb;
+    padding: 0;
+
+    & > div {
+      margin: 20px;
+    }
+
+    img.cover {
+      margin-bottom: 45px !important;
+    }
+  }
+
+  .mtc-form {
+    @extend .col-md-5;
+    form {
+      padding: 15px;
+    }
+  }
+}
+
 .mtc-description {
-  clear: both;
-  margin-bottom: 20px;
+  h3, p, div  {
+    font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    color: #222222;
+  }
 
   h3 {
+    font-weight: bold;
     margin: 0 0 16px 0;
     text-align: center;
   }
@@ -51,17 +95,14 @@
   }
 
   p {
-    color: #222222;
     font-size: 17px !important;
     text-align: left;
   }
 }
 
 .mtc-form form {
-  border-top: thin solid #96a2bb;
   clear: both;
   display: block;
-  padding: 25px 20px;
 
   .form-group {
     line-height: 0.8;
@@ -75,6 +116,10 @@
 
   input, textarea, button { margin-top:10px }
 
+  input, textarea {
+    background-color: #f8f7f7;
+  }
+
   button, .btn {
     @extend .btn-lg;
     background: #8d0707;
@@ -85,8 +130,14 @@
   }
 
   #mce-responses {
-    font-size: 1.1em;
     margin: 0 10px 10px 10px;
+
+    .response {
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
 
     #mce-error-response {
       color: #750000;
