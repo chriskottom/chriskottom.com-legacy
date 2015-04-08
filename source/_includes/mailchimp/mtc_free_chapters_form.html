@@ -36,7 +36,7 @@
 
 
  function validateInput(form) {
-   return true; 
+   return form.valid();
  }
 
  function register(form) {
@@ -112,16 +112,34 @@
  }
 
  $(document).ready( function () {
-   $('form#mc-embedded-subscribe-form').each(function() {
-     var form = $(this);
-     var button = form.find("button#mc-embedded-subscribe");
-     button.bind('click', function ( event ) {
-       if ( event ) event.preventDefault();
-       if ( validateInput(form) ) {
-	 $(this).attr('disabled','disabled');
-	 register(form);
-       }
+   var forms = $('form#mc-embedded-subscribe-form');
+
+   if (forms.size() > 0) {
+     forms.each(function() {
+       var form = $(this);
+       form.validate({
+	 rules: {
+	   EMAIL: {
+	     required: true,
+	     email: true
+	   },
+	   FNAME: {
+	     required: true
+	   }
+	 }
+       });
+
+
+       var button = form.find("button#mc-embedded-subscribe");
+       button.bind('click', function ( event ) {
+	 if ( event ) event.preventDefault();
+	 if ( validateInput(form) ) {
+	   $(this).attr('disabled','disabled');
+	   register(form);
+	 }
+       });
+
      });
-   });
+   }
  });
 </script>

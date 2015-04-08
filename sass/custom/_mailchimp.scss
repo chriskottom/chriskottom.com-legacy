@@ -64,6 +64,7 @@
   padding: 25px 20px;
 
   .form-group {
+    line-height: 0.8;
     margin: 0;
     padding: 0;
 
@@ -94,5 +95,14 @@
     #mce-success-response {
       color: #003c00;
     }
+  }
+
+  input.error {
+    border-color: #cc0000;
+  }
+
+  label.error {
+    color: #aa0000;
+    font-size: 14px;
   }
 }
