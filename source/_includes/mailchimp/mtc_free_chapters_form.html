@@ -1,5 +1,10 @@
 <form action="//chriskottom.us7.list-manage.com/subscribe/post-json?u=cb97c3f32295c9480bdb216ad&id=5a7e508a66&" method="get"
       id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+  <input type="hidden" name="SOURCE" id="SOURCE" value="chriskottom.com" />
+  <input type="hidden" name="RESNAME" id="RESNAME" value="{{ page.title }}" />
+  <input type="hidden" name="RESLOC" id="RESLOC" value="{{ site.url }}{{ page.url }}" />
+  <input type="hidden" name="group[13749]" id="mce-group[13749]-13749-1" value="2" />
+
   <div class="form-group mc-field-group input-lg required-field-block">
     <input type="email" id="EMAIL" name="EMAIL" class="form-control required email" placeholder="Email" required>
     <div class="required-icon"><div class="text">*</div></div>
@@ -111,6 +116,12 @@
 
  function displaySuccessMessage(msg) {
    displayMessage(msg, "#mce-success-response");
+
+   /*
+   $('#mc-embedded-subscribe-form #mce-success-response').bind('DOMSubtreeModified', function() {
+     _gaq.push(['_trackEvent', 'Mailing List', 'Subscribed Minitest', email]);
+   });
+   */
  }
 
  $(document).ready( function () {
