@@ -201,4 +201,4 @@ Finished in 1.331907s, 2.2524 runs/s, 2.2524 assertions/s.
 
 I still try to keep my test suite fast enough to run as a whole most of the time, so this isn't something that I need every day, but [running a single test is a common problem for more than a few people](http://stackoverflow.com/questions/5285711/is-it-possible-to-run-a-single-test-in-minitest) that, world-changing or not, it's nice to have the option available.
 
-{% include convertkit/minitest_after_post2.html %}
+{% include mailchimp/minitest_after_post3.html %}

@@ -93,4 +93,4 @@ A word of caution: what they say about [whatever gets measured gets optimized](h
 
 Don't follow the numbers blindly.  You know your code better than the tool does, but let the feedback they give you inform and influence your work to make it better.
 
-{% include convertkit/minitest_after_post2.html %}
+{% include mailchimp/minitest_after_post3.html %}

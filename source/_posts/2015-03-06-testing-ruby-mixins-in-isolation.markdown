@@ -121,4 +121,4 @@ In this case, you define a new ThingWithName class just for this test case using
 
 Clearly these are simple examples and only scratch the surface of what you might encounter in your own day-to-day work, but they're a great example of how mixing the simplicity of the Minitest framework with good, old-fashioned Ruby know-how can solve a potentially thorny problem.
 
-{% include convertkit/minitest_after_post2.html %}
+{% include mailchimp/minitest_after_post3.html %}
