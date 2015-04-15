@@ -77,18 +77,18 @@ All this power is brought to you courtesy of first method declaration in [```min
 class Module # :nodoc:
   def infect_an_assertion meth, new_name, dont_flip = false # :nodoc:
     # warn "%-22p -> %p %p" % [meth, new_name, dont_flip]
-	self.class_eval <<-EOM
-	  def #{new_name} *args
-	    case
-		when #{!!dont_flip} then
-		  Minitest::Spec.current.#{meth}(self, *args)
-		when Proc === self then
-		  Minitest::Spec.current.#{meth}(*args, &self)
-		else
-		  Minitest::Spec.current.#{meth}(args.first, self, *args[1..-1])
-		end
-	  end
-	EOM
+    self.class_eval <<-EOM
+      def #{new_name} *args
+        case
+        when #{!!dont_flip} then
+          Minitest::Spec.current.#{meth}(self, *args)
+        when Proc === self then
+          Minitest::Spec.current.#{meth}(*args, &self)
+        else
+          Minitest::Spec.current.#{meth}(args.first, self, *args[1..-1])
+        end
+      end
+    EOM
   end
 end
 {% endcodeblock %}
