@@ -48,12 +48,12 @@ class Minitest::Expectation
 end
 
 describe "Lebowski", "new syntax" do
-  let(:the_dude)  { Lebowski.new(first_name: "Jeff") }
-  
+  let(:the_dude)  { Lebowski.new(name: "Jeffrey") }
+
   it "should abide" do
-    _(the_dude.abides?).must_be true
-    expect(the_dude.abides?).must_be true   # also works
-    value(the_dude.abides?).must_be true    # ditto
+    _(the_dude).must :abide?
+    expect(the_dude).must :abide?
+    value(the_dude).must :abide?
   end
 end
 {% endcodeblock %}
@@ -133,7 +133,7 @@ end
 
 ## How does this affect you? ##
 
-The changes will be phased in over time and across several releases.  Right now, using the old syntax doesn't produce any deprcation warnings, so you'll have some time to get used to the change.  Some time before version 6.0 drops, the old syntax will be deprecated and the monkeypatches on Module will be removed, so if you've got a lot of Minitest suites, it might be a good idea to get started on the conversions sooner than later.
+The changes will be phased in over time and across several releases.  Right now, using the old syntax doesn't produce any deprecation warnings, so you'll have some time to get used to the change.  Some time before version 6.0 drops, the old syntax will be deprecated and the monkeypatches on Module will be removed, so if you've got a lot of Minitest suites, it might be a good idea to get started on the conversions sooner than later.
 
 Whether you're using the new syntax or the old though, the underlying implementation will change, and it's clear that this new approach will cause more objects to be instantiated in order to run the same tests.  Since a lot of Minitest's edge over competitors in performance and memory usage has been the result of creating fewer instances, we may start to see some erosion of that advantage, though the differences probably won't be significant for most test suites.
 
