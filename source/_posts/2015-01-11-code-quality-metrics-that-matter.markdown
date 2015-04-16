@@ -4,6 +4,7 @@ title: "Code Quality: Metrics That Matter"
 date: 2015-01-11 15:24:56 +0100
 comments: true
 categories: [development, Ruby, Rails, testing, "code quality", metrics]
+featured: 400
 description: These are some of the tools I've used to help keep ta
 ---
 {% img no-border right /images/boromir_run_tests_and_commit.jpg 400 One does not simply run tests and commit. %}

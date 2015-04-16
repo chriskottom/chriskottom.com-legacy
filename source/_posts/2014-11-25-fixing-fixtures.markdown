@@ -4,6 +4,7 @@ title: "Fixing Fixtures"
 date: 2014-11-25 10:47:46 +0100
 comments: true
 categories: [development, Rails, Ruby, testing, fixtures, factories]
+featured: 100
 description: A set of tips and practices to help keep your Rails fixtures manageable and your tests readable
 ---
 Rails fixtures have received a bad rap from almost everybody in the Rails world (core team excluded) for almost as long as the framework has been around.  Ever since alternatives like [factory_girl][1] and [Fabrication][2] arrived on the scene, it's been considered uncool to use them for anything serious.  Reasons cited by the haters include:

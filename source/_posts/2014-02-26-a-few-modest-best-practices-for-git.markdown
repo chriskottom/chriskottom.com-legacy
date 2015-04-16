@@ -4,7 +4,6 @@ title: "A Few Modest Best Practices for Git"
 date: 2014-02-26 12:39:06 +0100
 comments: true
 categories: development git
-featured: 400
 description: A few tricks and practices I've picked up over the past five years that make Git more enjoyable and my work more effective
 ---
 {% img right /images/git-logo-two-color.png 500 Git logo  %}
