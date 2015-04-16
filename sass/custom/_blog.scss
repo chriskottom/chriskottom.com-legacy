@@ -91,6 +91,22 @@
       }
     }
 
+    #projects .list-group-item {
+      display: block;
+
+      img.left {
+	margin: 0 10px 0 0;
+      }
+
+      h4 {
+	margin: 0 0 5px 0;
+      }
+
+      p, div {
+	font-size: 13px;
+      }
+    }
+
     // no bullets in lists
     ul {
       list-style: none;
