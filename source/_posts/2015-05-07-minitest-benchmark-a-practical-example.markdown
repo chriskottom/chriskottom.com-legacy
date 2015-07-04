@@ -159,7 +159,7 @@ class SortBenchmark < Minitest::Benchmark
 end
 {% endcodeblock %}
 
-Practically speaking, it takes a little trial and error to find the right range for each Benchmark.  In some cases the default range (power of 10 up to 10,000) might be just what you need, but my experiments so far have shown that while larger values might produce better regression function fit, they can also be prohibitively slow to run.  For example, an attempt at running bubble sort for arrays of 100,000 elements took several minutes to execute.  Ain't nobody got time fo dat.
+Practically speaking, it takes a little trial and error to find the right range for each Benchmark.  In some cases the default range (powers of 10 up to 10,000) might be just what you need, but my experiments so far have shown that while larger values may produce better regression function fit, they can also be prohibitively slow to run.  For example, an attempt at running bubble sort for arrays of 100,000 elements took several minutes to execute.  Ain't nobody got time fo dat.
 
 Next, we'll initialize collections of test data with the number of elements required for each value from our `bench_range`.  To do that, we want to use a normal Minitest `setup` method implementation and the helper mixin that we wrote into the test helper.
 
@@ -235,11 +235,13 @@ Finished in 11.627200s, 0.1720 runs/s, 0.1720 assertions/s.
 It looks like our merge sort implementation has matched expectations, but insertion sort is off.  There are plenty of possible reasons for the results we're getting here:
 
 * The algorithm isn't optimal.  In order to know that though, we'd need to better understand whether we're overperforming or underperforming with respect to the regression function.
-* The test data isn't as random as expected.  Insertion sort performs better (closer to *linear*) with data sets that are better sorted.
+* The test data isn't as random as expected.  Insertion sort performs better (closer to *linear*) with data sets that are better sorted.  (And in fact, further testing showed a better correlation with linear functions than power funtions for the values tested, though still not with an R-squared of 0.99 or more.)
 * Natural variability in randomized data and different runs will produce different results.  That's unlikely to overcome the kind of gap you see here with our insertion sort, but it could result in failures on certain test runs for merge sort.
 * External and interpreter-specific factors (e.g. garbage collection) could affect results.
 
-And even though I've got a failing test here, I'm still getting good feedback from it.  I can see how closely my results are mapping to a specific class of curve which gives me some insight into how well the code is likely to perform in the future.  Like any failing test, it could be telling me that my code needs to improve or it could be telling me that my *tests* need to improve.  In either case though, I'll be honest with you: I'm just getting my feet wet with Minitest::Benchmark.  I still have plenty to learn, but I can see opportunities to include it in my suites in the future as: 
+And even though I've got a failing test here, I'm still getting some valuable feedback from it.  I can see how closely my results map to a specific fit type which gives me some insight into how well the code is likely to perform with larger and larger inputs.  Like any failing test, it could be telling me that my code needs to improve or it could be telling me that my *tests* need to improve.
+
+I'll be honest with you: I'm just getting my feet wet with Minitest::Benchmark.  I still have plenty to learn, but I can see opportunities to include it in my suites in the future as: 
 
 * An initial target for defining code performance characteristics
 * A defensive measure to catch potential future regressions
