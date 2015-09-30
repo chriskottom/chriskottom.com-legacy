@@ -10,7 +10,7 @@ description: The latest Minitest release introduces some fundamental changes for
 
 Ruby and Rails provide developers with an awesome set of tools for testing your code and applications. If you've followed this blog at all, you're probably already aware that it's kind of a thing with me. :)
 
-But both the language and the framework have active ecosystems, so if you want to survive and thrive as a developer, you need to be ready to commit a certain portion of your time and mental energy toward maintaining your skills and keeping up with the latest changes.  A number of these have come along since I shipped [The Minitest Cookbook](http://chriskottom.com/minitestcookbook/), and this is the summary of the most important and interesting that I've been meaning to post for some time.
+But both the language and the framework have active ecosystems, so if you want to survive and thrive as a developer, you need to be ready to commit a certain portion of your time and mental energy toward maintaining your skills and keeping up with the latest changes.  A number of these have come along since I shipped [The Minitest Cookbook](http://chriskottom.com/minitestcookbook/), and this is the summary of the most important and interesting that I've been meaning to post for some time.<!--more-->
 
 ## Minitest Expectation Syntax ##
 
