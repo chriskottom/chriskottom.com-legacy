@@ -38,8 +38,6 @@ class AssessmentScorer
     end
   end
 
-  private
-
   def self.calculate_score(assessment)
     # ...
   end
