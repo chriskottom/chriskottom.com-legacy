@@ -17,6 +17,7 @@
 # <figure class="left half"><img src="http://site.com/images/ninja.png" width="150" height="150" title="Ninja Attack!" alt="Ninja in attack posture"><figcaption>Ninja Attack!</figcaption></figure>
 #
 
+require_relative "./image_tag"
 module Jekyll
 
   class CaptionedImageTag < ImageTag
