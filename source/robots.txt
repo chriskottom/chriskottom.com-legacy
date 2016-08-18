@@ -3,5 +3,6 @@ layout: nil
 ---
 User-agent: *
 Disallow: /assets
+Disallow: /freebies
 
 Sitemap: {{ site.url }}/sitemap.xml 
