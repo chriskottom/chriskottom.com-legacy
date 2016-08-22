@@ -117,11 +117,15 @@
  function displaySuccessMessage(msg) {
    displayMessage(msg, "#mce-success-response");
 
-   /*
-   $('#mc-embedded-subscribe-form #mce-success-response').bind('DOMSubtreeModified', function() {
-     _gaq.push(['_trackEvent', 'Mailing List', 'Subscribed Minitest', email]);
-   });
-   */
+   var subscriberEmail = $('#mc-embedded-subscribe-form #EMAIL').val();
+   var eventData = {
+     hitType: 'event',
+     eventCategory: 'Mailing List',
+     eventAction: 'subscribed - Minitest Cookbook',
+     eventLabel: subscriberEmail,
+     eventValue: 0
+   };
+   ga('send', eventData);
  }
 
  $(document).ready( function () {
