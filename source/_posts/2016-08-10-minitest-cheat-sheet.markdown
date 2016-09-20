@@ -14,7 +14,7 @@ Recently I came across a [post](http://www.notmagic.org/minitest-dilemma) that c
 
 Honestly, what project couldn't use better docs - more focused, more examples, and detailed explanations?  That was exactly the same line of thinking that got me thinking about writing [The Minitest Cookbook](http://chriskottom.com/minitestcookbook).
 
-I released a cheat sheet with the book that I thought might provide people with a partial solution, so I prepared a simplified version that includes a reference to the basic methods and syntax for Minitest and Minitest::Spec as well as a full listing of all assertions and expectations for each along with simple code examples for context.  (The full version also includes Rails-specific helpers and assertions and a list of the most commonly used Capybara methods.)
+I released a cheat sheet with the book that I thought might provide people with a partial solution, so I prepared a simplified version that includes a reference to the basic methods and syntax for Minitest and Minitest::Spec as well as a full listing of all assertions and expectations for each along with simple code examples for context.  (The full version also includes Rails-specific helpers and assertions and a list of the most commonly used Capybara methods.)<!--more-->
 
 <a class="bigger" target="_blank" href="/freebies/cheatsheets_free.pdf">Get the Cheat Sheet</a>
 

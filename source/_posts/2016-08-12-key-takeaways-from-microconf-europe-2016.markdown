@@ -17,7 +17,7 @@ It's been about 10 days since I returned home from [MicroConf Europe 2016](http:
 
 Setting aside the tactical for a moment though, a lot the value of MicroConf comes from the larger lessons drawn from the talks and hallway conversations.  Sometimes, these are common threads that run through many interactions but never appear on a slide.  Now that I've had some time for rest and recovery, I took some time this week to think through some of the broader themes from this year's conference.
 
-(Special thanks to [Christoph Engelhardt](https://twitter.com/itengelhardt), the official MicroConf Europe scribe. Without his always great [conference notes](http://www.christophengelhardt.com/microconf-europe-2016-notes-noteworthy/) to refer to, I wouldn't have been able to collect my thoughts nearly as easily.)
+(Special thanks to [Christoph Engelhardt](https://twitter.com/itengelhardt), the official MicroConf Europe scribe. Without his always great [conference notes](http://www.christophengelhardt.com/microconf-europe-2016-notes-noteworthy/) to refer to, I wouldn't have been able to collect my thoughts nearly as easily.)<!--more-->
 
 ## Kiss your comfort zone goodbye.
 
