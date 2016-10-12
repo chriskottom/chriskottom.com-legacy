@@ -1,0 +1,107 @@
+---
+layout: page
+title: "Running Pace Calculator"
+date: 2016-09-30 13:24
+comments: true
+sharing: true
+footer: true
+description: A simple Javascript converter for calculating average running pace and speed
+---
+<style type="text/css">
+ #calculator { margin-top: 20px }
+ #calculator h3.panel-title { font-weight: bold; font-size: 20px; } 
+ #calculator form { text-align: center; font-size: 22px; margin-bottom: 20px }
+ #calculator input, #calculator select { text-align: center; font-size: 22px }
+ #calculator select { padding: 5px 15px }
+ #calculator #results { font-size: 20px }
+ #calculator #results span { display: block; float: right }
+ #calculator #results div { margin-bottom: 10px; }
+ #calculator input { border: 0; outline: 0; background-color: #f5f5f5;
+		     border-bottom: 2px solid #999; margin: 0 5px; padding: 10px }
+ .flash { background-color: #8dabff; display: none }
+</style>
+
+<p>
+  I run a few times each week, and like any good nerd, I want to keep tabs on the
+  numbers.  RunKeeper records my times and distances and calculates pace for me.
+  But while I measure distances in kilometers, I also want to know my pace per
+  mile.  So I wrote a simple calculator to compute the speed and pace in various
+  units without having to open a spreadsheet.
+</p>
+
+<p>
+  Requirements &amp; Approach:
+  <ul>
+    <li>A runner can enter the distance run (miles or kilometers) and the time (whole minutes or minutes and seconds).</li>
+    <li>The calculator will compute the speed in meters per second and then convert that number to the speed and pace in various metric and Imperial units of measure.</li>
+    <li>Paces will be expressed in minutes and seconds (MM:SS).</li>
+    <li>The distance will be provided as a decimal number of kilometers.</li>
+  </ul>
+</p>
+
+<div id="calculator" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Running Pace Calculator</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-inline">
+      <span>I ran </span><div class="form-group">
+	<input type="text" class="form-control distance" size="4" placeholder="">
+      </div>
+      <div class="form-group">
+	<select class="units form-control">
+	</select>
+      </div><span> in </span><div class="form-group">
+	<input type="text" class="form-control time" size="5" placeholder="">
+      </div><span>.</span>
+    </form>
+    <div id="results" style="display:none">
+      <div class="col-md-6">
+	<span id="km" class="value"></span>
+      </div>
+      <div class="col-md-6">
+	kilometers
+      </div>
+
+      <div class="col-md-6">
+	<span id="miles" class="value"></span>
+      </div>
+      <div class="col-md-6">
+	miles
+      </div>
+
+      <div class="col-md-6">
+	<span id="kph" class="value"></span>
+      </div>
+      <div class="col-md-6">
+	kilometers per hour
+      </div>
+
+      <div class="col-md-6">
+	<span id="mph" class="value"></span>
+      </div>      
+      <div class="col-md-6">
+	miles per hour
+      </div>
+      
+      <div class="col-md-6">
+	<span id="minPerKm" class="value"></span>
+      </div>      
+      <div class="col-md-6">
+	minutes / km
+      </div>
+      
+      <div class="col-md-6">
+	<span id="minPerMile" class="value"></span>
+      </div>      
+      <div class="col-md-6">
+	minutes / mile
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/javascripts/custom/js-experiments/running-pace-calculator.js"></script>
+<script>
+ $('#calculator').calculatorize();
+</script>
