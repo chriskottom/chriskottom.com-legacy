@@ -1,0 +1,12 @@
+<div id="blog" class="column">
+  <h2>From The Blog</h2>
+  {% for post in site.posts limit:4 reverse %}
+  <article class="page-header">
+    <h3><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></h3>
+    <p class="meta text-muted">
+      <time datetime="{{ post.date | datetime | date_to_xmlschema }}">{{ post.date_formatted }}</time>
+    </p>
+  </article>
+  {% endfor %}
+  <p><a class="btn btn-primary" href="/blog" role="button">Check out more &raquo;</a></p>
+</div>

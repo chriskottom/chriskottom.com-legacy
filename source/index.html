@@ -14,42 +14,11 @@ body_id: home
 <div id="main" class="container">
   <div id="content">
     <div class="row">
-      <div id="about" class="column">
-	<h2>A Little About Me</h2>
-	<p>Life is where you find it.  I moved to the <em>Czech Republic</em> in the fall of 2000 to work for a long-gone startup.  When I left the states, I told my friends and family that I would be here <em>"for a year or two"</em>.</p>
-	<p>I've spent a good chunk of the past 20 years hunched over a keyboard working on <em>system architecture &amp; design</em> and <em>web applications</em> - most recently using <em>Ruby on Rails</em> and <em>JavaScript</em>.</p>
-	<p>
-	  <a href="/hire-me">Let's work together!</a>
-	  <a class="pull-right" href="mailto:chris@chriskottom.com">Email me</a>
-	</p>
-      </div>
+      {% include homepage/about_me.html %}
 
-      <div id="blog" class="column">
-	<h2>From The Blog</h2>
-	{% for post in site.posts limit:4 reverse %}
-	<article class="page-header">
-	  <h3><a href="{{ root_url }}{{ post.url }}">{{post.title}}</a></h3>
-	  <p class="meta text-muted">
-	    <time datetime="{{ post.date | datetime | date_to_xmlschema }}">{{ post.date_formatted }}</time>
-	  </p>
-	</article>
-	{% endfor %}
-	<p><a class="btn btn-primary" href="/blog" role="button">Check out more &raquo;</a></p>
-      </div>
+      {% include homepage/recent_posts.html %}
 
-      <div id="recent-work" class="column">
-	<h2>Recently Working On</h2>
-	<p>
-	  I recently released my first product,
-          <a href="http://minitestcookbook.com/"><b>The Minitest Cookbook</b></a>,
-	  and so far the reaction of those who've read it has been super-positive.
-	  It's been a humbling experience.
-	</p>
-	<p>
-	  Check out the <a href="http://minitestcookbook.com/">product page</a>
-	  to download the first two chapters free!
-	</p>
-      </div>
+      {% include homepage/recent_work.html %}
     </div>
   </div>
 </div>
