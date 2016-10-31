@@ -6,6 +6,7 @@ comments: true
 categories: ["Ruby", "WebMock", "JSON", "external APIs", "web services", "testing", "Minitest", "test doubles", "stubs"]
 description: Learn to stub external web services and APIs with WebMock during testing, and keep your Ruby and Rails tests manageable, clean, fast, and reliable.
 ---
+{% img no-border right /images/json-everywhere.jpg 450 JSON Everywhere %}
 I've recently been working on a number of projects that are built on multiple Rails applications, microservices, and data from third-party providers.  I can tell you one thing for sure: when your application is flinging JSON blobs all over the place, you can't use the same direct testing style that you would with a monolith.  Do so, and you create all sorts of problems for yourself including:
 
 * Lousy test performance due to network overhead
