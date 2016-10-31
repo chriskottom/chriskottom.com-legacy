@@ -1,0 +1,26 @@
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script src="//www.google-analytics.com/cx/api.js?experiment=QCeWLCGdRNiBQBwhgLfXwA"></script>
+
+<script>
+ // Ask Google Analytics which variation to show the user.
+ var chosenVariation = cxApi.chooseVariation();
+
+ // Define JavaScript for each page variation of this experiment.
+ var pageVariations = [
+   function() {     // Original headline
+      return "Write more effective tests.";
+   },
+   function() {     // Variant 1
+      return "Learn to test with confidence.";
+   }
+ ];
+
+ // Wait for the DOM to load, then execute the view for the chosen variation.
+ $(document).ready(function() {
+   var header = $('h1');
+   header.css({ display: 'none' });
+   var headline = pageVariations[chosenVariation]();
+   header.text(headline);
+   header.fadeIn('fast');
+ });
+</script>
