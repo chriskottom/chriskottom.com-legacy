@@ -6,15 +6,15 @@ comments: true
 categories: ["Ruby", "WebMock", "JSON", "external APIs", "web services", "testing", "Minitest", "test doubles", "stubs"]
 description: Learn to stub external web services and APIs with WebMock during testing, and keep your Ruby and Rails tests manageable, clean, fast, and reliable.
 ---
-One of the projects I've been working on most recently consists of three separate Rails applications using data from several third-party providers.  When your application is built on flinging JSON blobs all over the place, you can't use the same direct testing style that you would with a monolith since it leaves you open to all sorts of potential problems including:
+I've recently been working on a number of projects that are built on multiple Rails applications, microservices, and data from third-party providers.  I can tell you one thing for sure: when your application is flinging JSON blobs all over the place, you can't use the same direct testing style that you would with a monolith.  Do so, and you create all sorts of problems for yourself including:
 
 * Lousy test performance due to network overhead
 * Unexpected failures caused by connectivity issues, API rate limiting, and other problems
 * Undesired side effects from using a real web service (possibly even in the production environment)
 
-But the bigger problem is the control you give up when using a real API in tests.  Working against a real system, it's a real trick to exercise your code against a full range of reasonable (and some unreasonable) responses, so you're usually stuck testing a few "happy path" scenarios and those issues that might throw an exception.<!--more-->
+But the thornier problem is the lack of control you have when using live APIs for testing.  Working against a real system, it becomes a real trick to exercise your code against a full range of reasonable (and unreasonable) responses, so you find yourself stuck testing a few "happy path" scenarios and perhaps any cases that might happen to throw an exception from somewhere in the stack.<!--more-->
 
-## Straight Outta the Headlines, A Practical Example
+## A Practical (and Mercifully Short-Term) Application
 
 So as an example (and with no small amount of fear and loathing) I wrote [a little program](https://github.com/chriskottom/fivethirtyeight-tracker) that grabs the data feed from [fivethirtyeight.com](http://projects.fivethirtyeight.com/2016-election-forecast/) and uses it to display a simple red and blue ASCII progress bar showing the current state of the race.
 
@@ -36,7 +36,7 @@ describe FiveThirtyEight::Feed do
 end
 {% endcodeblock %}
 
-There's no way to know in advance, of course, what results the API will deliver on any given test run, so it's really unlikely that this test will ever pass.
+There's no way of knowing in advance what results the API will return on any given test run, so the odds that this test would ever pass are extremely low.
 
 {% codeblock lang:bash %}
 $ > rake
@@ -57,19 +57,19 @@ Expected: 80.0
 rake aborted!
 {% endcodeblock %}
 
-Ignoring the obvious failure, a single test took nearly *one whole second* to run, and most of that was time spent talking to the API.  As we add more tests, each of which will make their own requests, the time to run the suite can be expected to increase linearly - assuming of course that the provider doesn't get tired of the constant requests and simply block our IP.
+Ignoring the fact that this test fails, it took nearly *one whole second* to run with most of that time spent talking to the API.  As we add more tests will multiply the number of requests which will increase testing time linearly.  (Assuming, of course, that the provider doesn't get tired of the constant requests and simply block our IP.)
 
-We need a way to test our handling code isolated from the network and the unpredictable results of the real API.
+In short: we need to be able to test the application code isolated from the real API.
 
 ## WebMock to the Rescue
 
 [WebMock](https://github.com/bblimke/webmock) is a gem that integrates with all the major testing frameworks (including [Minitest](https://github.com/seattlerb/minitest), natch) and allows us to stub and set expectations on HTTP requests made during testing.  By stubbing network requests and responses several layers removed from our application code, we can inject canned responses with a degree of control we'd never get using the API directly.
 
-The rest of this post describes how I've used WebMock in my own tests and the methods I've used to keep my tests clean and manageable while removing the problems that come with integrated systems.
+In the rest of this post, I'll describe how I've used WebMock in my own tests to solve the problems described above, and I'll show how to organize your code to keep your tests clean and manageable.
 
 ### Step 1: Unplug from the Internet.
 
-Begin to isolate your tests by globally shutting down all HTTP requests.  Just include the gem in your Gemfile and add the following lines to your test helper:
+Begin to isolate your tests by globally shutting down all HTTP requests.  Just include the `webmock` gem in your Gemfile, and add the following lines to your test helper:
 
 {% codeblock lang:ruby test/test_helper.rb %}
 require 'webmock/minitest'
@@ -80,7 +80,7 @@ WebMock includes stub adapters for Net::HTTP and most other popular HTTP librari
 
 ### Step 2: Stub individual requests.
 
-If we run our tests now, WebMock will provide a helpful message with stub code we can use directly in our test.
+If we run tests now, we'll see that WebMock provides a helpful message with stub code we can use directly in our test.
 
 {% codeblock lang:bash %}
 $ > rake
@@ -139,7 +139,7 @@ end
 
 ### Step 3: Refactor.
 
-For a small application, that might be enough, but for larger projects, we'll want to refactor and improve test readability before we call it a day.  First, I want to extract the stub code to a helper method in a separate mixin.  It helps to declutter this test and maintains a nice level of DRY-ness.  In most cases, I'll let the helper method take a Hash of options to give me some flexibility over essential variables like HTTP status code, query string, and response body.
+For a small application, we might just stop here, but for larger projects, it's a good idea to refactor and improve test readability before calling it a day.  To begin with, I'll extract the stub code to a helper method in a separate mixin.  This helps to declutter the test body and keeps the focus on the intent of the test, not the details of the request.  I usually write helper methods that take a Hash of options which provides some flexibility over essential variables like HTTP status code, query string, and response body.
 
 {% codeblock lang:ruby test/support/fivethirtyeight_helpers.rb %}
 module FiveThirtyEightHelpers
@@ -163,7 +163,7 @@ module FiveThirtyEightHelpers
 end
 {% endcodeblock %}
 
-Next, I've found it a good practice to extract the test data from the helper method to a [fixture file](https://github.com/chriskottom/fivethirtyeight-tracker/tree/master/test/fixtures/json/fivethirtyeight_summary.json) which I'll usually place under the `test/fixtures/json` directory.  It leaves the Ruby code cleaner still, and it ensures that we can load the data from within the test body if the need arises.  I've got a number of helper methods that simplify access to the data in [a simple helper mixin](https://github.com/chriskottom/fivethirtyeight-tracker/tree/master/test/support/json_fixtures.rb) which I can then include in classes and modules that need it.
+Next, I like to extract the test data to a [fixture file](https://github.com/chriskottom/fivethirtyeight-tracker/tree/master/test/fixtures/json/fivethirtyeight_summary.json) which I usually place under the `test/fixtures/json` directory.  It leaves the Ruby code cleaner still, and it ensures that we can load the data from within the test body if the need arises.  I've written a number of helper methods that simplify access to the data as [a module](https://github.com/chriskottom/fivethirtyeight-tracker/tree/master/test/support/json_fixtures.rb) which I can then include in any classes and modules that need it.
 
 {% codeblock lang:ruby test/support/json_fixtures.rb %}
 module JSONFixtures
@@ -189,7 +189,7 @@ module JSONFixtures
 end
 {% endcodeblock %}
 
-That allows us to simplify the API helper mixin quite a bit:
+You can see for yourself how the API helper mixin and the test itself have benefited from the refactoring:
 
 {% codeblock lang:ruby test/support/fivethirtyeight_helpers.rb %}
 module FiveThirtyEightHelpers
@@ -204,8 +204,6 @@ module FiveThirtyEightHelpers
   end
 end
 {% endcodeblock %}
-
-And finally, we end up with a nice clean test body:
 
 {% codeblock lang:ruby test/fivethirtyeight/feed_test.rb %}
 describe FiveThirtyEight::Feed do
@@ -224,7 +222,7 @@ describe FiveThirtyEight::Feed do
 end
 {% endcodeblock %}
 
-Running the tests one last time shows that we've solved both of the problems we had before: the test passes, and the suite is hundreds of times faster than it was.
+Running the tests one last time, the results show that we've addressed both of the problems we set out to solve: the test passes, and the suite is hundreds of times faster than it was.
 
 {% codeblock lang:bash %}
 $ > rake
@@ -239,6 +237,8 @@ Finished in 0.003122s, 320.3415 runs/s, 1922.0488 assertions/s.
 1 runs, 6 assertions, 0 failures, 0 errors, 0 skips
 {% endcodeblock %}
 
-## Always Read the Fine Print
+## Limitations, Conditions, and Other Fine Print
 
-WebMock is a polished tool that solves a very specific problem, but you need to understand the downsides.  As I'm writing this, it's just a few days until election day, and I expect that the FiveThirtyEight API this code uses will disappear shortly thereafter.  But my tests won't know that, and so I'll be in the confusing position of having green tests and a broken application.  It's the same problem that affects other types of test doubles.  By using them, you're copying the assumptions your code makes about a service beyond your control to your tests and isolating your tests from the real thing.
+WebMock is a polished tool that solves a very narrow class of problems, but to use it effectively, you need to remain conscious of your objectives.  Specifically, you have zero control over the availability and responses delivered from the external service, so you cannot verify the behavior of your application as a whole.  Your request stubs represent a set of assumptions you've made about the way the API works.  These assumptions already exist in your code, but you're now effectively copying them into your tests as well.  When the API changes or disappears, it's the responsibility of the developer to update those assumptions accordingly.
+
+The FiveThirtyEight Tracker example makes this point perfectly.  As I'm writing this, it's just a few days until election day, and I can reasonably expect that the API this code uses will disappear shortly thereafter.  My tests won't know that though, so if I'm not careful, I could find myself in the confusing position of having green tests and a broken application.
