@@ -243,3 +243,5 @@ Finished in 0.003122s, 320.3415 runs/s, 1922.0488 assertions/s.
 WebMock is a polished tool that solves a very narrow class of problems, but to use it effectively, you need to remain conscious of your objectives.  Specifically, you have zero control over the availability and responses delivered from the external service, so you cannot verify the behavior of your application as a whole.  Your request stubs represent a set of assumptions you've made about the way the API works.  These assumptions already exist in your code, but you're now effectively copying them into your tests as well.  When the API changes or disappears, it's the responsibility of the developer to update those assumptions accordingly.
 
 The FiveThirtyEight Tracker example makes this point perfectly.  As I'm writing this, it's just a few days until election day, and I can reasonably expect that the API this code uses will disappear shortly thereafter.  My tests won't know that though, so if I'm not careful, I could find myself in the confusing position of having green tests and a broken application.
+
+{% include mailchimp/minitest_after_post3.html %}
