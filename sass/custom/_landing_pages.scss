@@ -102,14 +102,14 @@
     }
 
     .jumbotron {
-      margin: 80px auto;
+      margin: 50px auto;
 
       h1 {
-	margin-bottom: 0.8em;
+	margin-bottom: 0.6em;
       }
 
-      & > p {
-	font-size: 24px;
+      & > p, & > ul > li {
+	font-size: 22px;
       }
     }
   }
@@ -121,7 +121,11 @@
     background-image: url('/images/grey.png');
     background-color: #fff;
   }
-  */
+ */
+
+  nav.navbar {
+    display: none;
+  }
 
   #lead {
     background-clip: border-box;
@@ -138,19 +142,44 @@
       background-color: rgba(20, 50, 50, 0.8);
       border: 1px solid #666;
 
-      & > h1, & > p {
+      & > h1, & > p, & > ul > li {
 	color: #eeeeff;
       }
 
+      & > ul {
+	list-style: square outside none;
+      }
+
       .buy-button {
+	clear: right;
 	float: right;
-	margin: 25px 0 50px 75px;
+	margin: -15px -20px 30px 50px;
+	text-align: center;
 
-	a.free-chapters {
-	  color: #fff98f;
+	img.cover {
+	  @extend .center-block;
+	  display: block;
+	  height: 300px;
+	  margin-bottom: 20px;
+	}
 
-	  &:hover {
-	    color: #fffccc;
+	a.btn {
+	  @extend .center-block;
+	  display: block;
+
+	  i.glyphicon {
+	    font-size: 36px;
+	    margin-right: 20px;
+	  }
+
+	  span {
+	    font-size: 22px;
+	    font-weight: bold;
+
+	    small {
+	      font-size: 20px;
+	      font-weight: normal;
+	    }
 	  }
 	}
       }
@@ -298,18 +327,22 @@
 .buy-button {
   text-align: center;
 
-  i.glyphicon {
-    font-size: 36px;
-    margin-right: 25px;
-  }
+  a.btn {
+    padding: 12px 18px;
 
-  span {
-    font-size: 30px;
-    font-weight: bold;
+    i.glyphicon {
+      font-size: 36px;
+      margin-right: 25px;
+    }
 
-    small {
-      font-size: 24px;
-      font-weight: normal;
+    span {
+      font-size: 30px;
+      font-weight: bold;
+
+      small {
+	font-size: 24px;
+	font-weight: normal;
+      }
     }
   }
 
