@@ -51,7 +51,8 @@ titlecase: false       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [asides/minitest_cookbook.html, asides/popular_posts.html, asides/social.html, asides/github.html, asides/pinboard.html]
+default_asides: [asides/minitest_cookbook.html, asides/social.html, asides/popular_posts.html, asides/github.html, asides/pinboard.html]
+featured_post_urls: ["/blog/2014/10/4-fantastic-ways-to-set-up-state-in-minitest/", "/blog/2015/01/code-quality-metrics-that-matter/", "/blog/2016/08/minitest-cheat-sheet/", "/blog/2016/10/stubbing-external-apis-with-webmock/", "/blog/2014/02/a-few-modest-best-practices-for-git/", "/blog/2014/06/dress-up-your-minitest-output/"]
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.

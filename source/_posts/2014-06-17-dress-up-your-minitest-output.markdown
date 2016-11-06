@@ -4,7 +4,6 @@ title: "Dress Up Your Minitest Output"
 date: 2014-06-17 09:33:03 +0200
 comments: true
 categories: [development, Ruby, Minitest, testing]
-featured: 300
 description: Colorize and add important detail to your Minitest output using the minitest-reporters gem.
 ---
 Ruby folks are known to be a hyperactive lot, and it seems like few things in the Ruby world are as subject to change as the new hotness in testing.  Over the years, I've used Test::Unit and [RSpec][1] at various times with a whole array of complementary libraries for test data and mocking and assertions and so on.  At the moment though, I'm using relatively unadorned [Minitest][2] for most projects.  Why?  Like a lot of people, I like that it's straightforward to use and takes no time to load up, but I'm also finding that the simplicity of the library means that it's pretty easily customizable - either using third-party gems or with a little bit of hacking on your own.

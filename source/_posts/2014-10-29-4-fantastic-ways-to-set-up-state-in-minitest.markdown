@@ -4,8 +4,7 @@ title: "4 Fantastic Ways to Set Up State in Minitest"
 date: 2014-10-29 14:26:06 +0200
 comments: true
 categories: [development, Ruby, Minitest, before, let, setup, testing]
-featured: 500
-description: How to set up system state in Minitest using a variety of techniques and the power of Ruby
+description: How to set up system state in Minitest using a variety of techniques and the power of Ruby.
 ---
 {% img no-border right /images/fantastic_four.jpg The Fantastic Four %}
 

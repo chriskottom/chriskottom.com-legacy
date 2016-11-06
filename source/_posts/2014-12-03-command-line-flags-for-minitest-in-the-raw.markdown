@@ -4,7 +4,6 @@ title: "Command Line Flags for Minitest in the Raw"
 date: 2014-12-03 11:27:09 +0100
 comments: true
 categories: [development, Ruby, Minitest, "command line", "verbose", "single test"]
-featured: 200
 description: Minitest can be used to invoke your tests directly from the Ruby interpreter, and it has its own command line options that can be used for certain common use cases encountered by many Rubyists.
 ---
 If you're like most Ruby devs, you probably run your test suite on the command line using `rake test`.  In addition to being a fast way to run all tests which is probably what you want to do most of the time, it's also the default task for Rails projects and well documented for other types of Ruby projects.  Every once in a while though, you want more control over the tests that run.  Rake might not give you what you need in these cases, but fortuntely, Minitest provides some nice but not widely known options that can be used directly from the command line to help you tailor your test runs.<!--more-->
