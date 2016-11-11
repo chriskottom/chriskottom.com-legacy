@@ -1,3 +1,6 @@
+---
+ga_experiments: true
+---
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
@@ -5,7 +8,6 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   {% include head.html %}
-  {% include ga_experiments.html %}
   {% include crazy_egg.html %}
 </head>
 
