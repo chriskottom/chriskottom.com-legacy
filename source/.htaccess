@@ -8,6 +8,8 @@ RedirectMatch   301   ^\/blog\/2014\/12\/naked\-minitest\-on\-the\-command\-line
 RedirectMatch   301   ^\/blog\/2014\/12\/minitest\-in\-the\-buff(.*)$ /blog/2014/12/command-line-flags-for-minitest-in-the-raw/
 RedirectMatch   301   ^\/blog\/2015\/09\/rails\-not\-as\-shiny\-still\-pretty\-awesome(.*)$ /blog/2015/09/rails-got-99-problems-but-these-aint-them/
 
+RedirectMatch   301   ^\/developing-rails-apis$ /developing-rails-apis/
+
 RedirectMatch   301   ^\/products\/(.*)$ /$1
 
 ### CACHING ###
