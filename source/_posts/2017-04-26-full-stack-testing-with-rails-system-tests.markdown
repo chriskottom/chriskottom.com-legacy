@@ -53,7 +53,7 @@ class CreateNewUserTest < ActionDispatch::IntegrationTest
 
     # Verify that User appears in listing
     get users_url
-    assert_select 'table do
+    assert_select 'table' do
       assert_select 'tr td', 'user1@example.com'
     end
   end
@@ -209,7 +209,11 @@ First, managing database access and consistency between Capybara and Rails has a
 
 In this implementation, though, the application and test threads will share a single database connection between them, so they will operate within a single transaction and subsequently share a common view of the database - all out of the box.
 
-Rails also generates screenshots for all failed and errored out system tests by default and tucks them into `tmp/screenshots`. This is a feature that's going to come in handy - especially for long-running tests and extra-especially as applications continue to move more logic to the client
+Rails also generates screenshots for all failed and errored out system tests by default and tucks them into `tmp/screenshots`. This is a feature that's going to come in handy - especially for long-running tests and extra-especially as applications continue to move more logic to the client.
+
+So far I'm loving this combination of (no) setup and (more) features that system tests provide. If you've read about my previous setup based on [minitest-rails-capybara](https://github.com/blowmage/minitest-rails-capybara) in [The Minitest Cookbook](https://chriskottom.com/minitestcookbook/), let me be clear: this is my new jam, and I'll be shipping an update to the book sometime after Rails 5.1 officially ships that covers system tests.
+
+Big ol' thanks to [@eileencodes](https://twitter.com/eileencodes) for shepherding this feature into Rails. If you're interested in all the inside baseball about the development of this feature, you should really check out [the slides from her RailsConf talk](https://speakerdeck.com/eileencodes/building-the-new-rails-system-test-framework).
 
 ## Using System Tests: Need vs. Speed
 
@@ -226,7 +230,5 @@ As a rule, I think it's a good policy to run unit-level tests (models, controlle
 {% codeblock %}
 chris@erdos:~/Projects/tiny_projects/blogg > rails test test/
 {% endcodeblock %}
-
-Big ol' thanks to [@eileencodes](https://twitter.com/eileencodes) for shepherding this feature into Rails. If you're interested in all the inside baseball about the development of this feture, you should really check out [the slides from her RailsConf talk](https://speakerdeck.com/eileencodes/building-the-new-rails-system-test-framework).
 
 {% include mailchimp/minitest_after_post3.html %}
