@@ -227,4 +227,6 @@ As a rule, I think it's a good policy to run unit-level tests (models, controlle
 chris@erdos:~/Projects/tiny_projects/blogg > rails test test/
 {% endcodeblock %}
 
+Big ol' thanks to [@eileencodes](https://twitter.com/eileencodes) for shepherding this feature into Rails. If you're interested in all the inside baseball about the development of this feture, you should really check out [the slides from her RailsConf talk](https://speakerdeck.com/eileencodes/building-the-new-rails-system-test-framework).
+
 {% include mailchimp/minitest_after_post3.html %}
