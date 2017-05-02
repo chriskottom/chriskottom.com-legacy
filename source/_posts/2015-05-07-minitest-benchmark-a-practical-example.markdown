@@ -252,5 +252,3 @@ In the next installment of this series, I'm going to take a look at how we might
 
 * [Minitest::Benchmark example](https://gist.github.com/chriskottom/22ed11c5b332cd98bfce) - gist containing sample source for this post
 * [Sorting Algorithms Animations](http://www.sorting-algorithms.com/) - a great site for visualizing different algorithms
-
-{% include mailchimp/minitest_after_post3.html %}

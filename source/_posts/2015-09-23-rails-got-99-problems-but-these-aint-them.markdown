@@ -108,5 +108,3 @@ That said though, there are still big issues that need to be ironed out in order
 None of these is a showstopper when it comes to building a viable business, but they're all technical problems that I think are more cause for concern than those mentioned above.
 
 More important to understand, though, is that **problems are a sign of life**.  In 2015, Rails serves a massive community, and the fact that there's still so much discussion about how the framework could improve and grow is a sign that developers still care and that Rails still matters.
-
-{% include mailchimp/minitest_after_post3.html %}

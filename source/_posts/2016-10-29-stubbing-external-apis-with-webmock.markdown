@@ -245,5 +245,3 @@ WebMock is a polished tool that solves a very narrow class of problems, but to u
 The FiveThirtyEight Tracker example makes this point perfectly.  As I'm writing this, it's just a few days until election day, and I can reasonably expect that the API this code uses will disappear shortly thereafter.  My tests won't know that though, so if I'm not careful, I could find myself in the confusing position of having green tests and a broken application.
 
 If you'd like to learn more about how to use WebMock in some practical cases, make sure to check out [part 2 of this series](/blog/2016/11/keep-on-webmockin-in-the-real-world/).
-
-{% include mailchimp/minitest_after_post3.html %}

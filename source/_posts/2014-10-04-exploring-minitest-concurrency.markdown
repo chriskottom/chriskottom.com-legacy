@@ -73,8 +73,6 @@ In order to see how Minitest behaved across different interpreters, I ran the sa
 
 For each implementation and each concurrency level, I executed three test runs and calculated the averages values for suite execution and number of assertions per second as reported by Minitest as well as the total and CPU times reported by the Unix `time` command.  The tables below show the averages along with the relative differences over the baseline (serial) case in parentheses.
 
-{% include minitest_cookbook_plug2.html %}
-
 ## Round 1: MRI ##
 
 <table class="results">
@@ -389,8 +387,6 @@ YMMV when it comes to implementing (or not) concurrent execution within your own
 * [Parallelism is a Myth in Ruby][5] by Ilya Grigorik
 * [Concurrency in Ruby Explained][7] by Matt Aimonetti
 * [More about MRI and the GIL][6] by Jesse Storimer
-
-{% include mailchimp/minitest_after_post3.html %}
 
 [1]: https://github.com/seattlerb/minitest
 [2]: https://github.com/seattlerb/minitest/blob/master/lib/minitest/hell.rb

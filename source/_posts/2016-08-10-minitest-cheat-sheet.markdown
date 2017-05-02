@@ -19,5 +19,3 @@ I released a cheat sheet with the book that I thought might provide people with 
 <a class="bigger" target="_blank" href="/freebies/cheatsheets_free.pdf">Get the Cheat Sheet</a>
 
 Enjoy, and [let me know](mailto:chris@chriskottom.com?subject=cheatsheet) if it helps you.
-
-{% include mailchimp/minitest_after_cheat_sheet.html %}

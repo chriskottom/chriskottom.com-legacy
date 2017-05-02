@@ -178,6 +178,3 @@ describe FiveThirtyEight::Feed do
   end
 end
 {% endcodeblock %}
-
-{% include mailchimp/minitest_after_post3.html %}
-

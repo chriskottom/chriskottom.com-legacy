@@ -120,5 +120,3 @@ end
 In this case, you define a new ThingWithName class just for this test case using `Struct.new` which looks like a constructor but actually returns a Ruby Class.  The instances of this class will have whatever list of attributes you passed to `Struct.new` - in this case, a name.  This method also takes an optional block argument which, when present, is evaluated within the context of the returned Class.  Once you get into the body of the test, you only need to instantiate a new ThingWithName instance and pass it a String `:name` argument.
 
 Clearly these are simple examples and only scratch the surface of what you might encounter in your own day-to-day work, but they're a great example of how mixing the simplicity of the Minitest framework with good, old-fashioned Ruby know-how can solve a potentially thorny problem.
-
-{% include mailchimp/minitest_after_post3.html %}

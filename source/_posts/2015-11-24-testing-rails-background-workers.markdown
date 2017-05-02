@@ -238,6 +238,3 @@ end
 The test above mimics an administrator logging into the application and uploading a CSV file with user data.  As we already mentioned, using the Active Job test adapter ensures that jobs aren't performed except when we explicitly permit it.  In this case, only the jobs queued within the `assert_performed_with` block will be executed, and we wrap that in a further `assert_difference` block to verify that the visible side effect - the creation of new user accounts - actually occurs.
 
 Automated acceptance tests like this one won't guarantee that you find every possible integration bug, but they will improve your chances substantially over manual testing.  They also happen to be great at surfacing regressions after code changes and problems with displayed data or DOM manipulation by client-side scripts.
-
-
-{% include mailchimp/minitest_after_post_rails.html %}

@@ -123,5 +123,3 @@ Failures and errors will be displayed by filename and line number to allow for e
 
 
 I'll be looking to ship a big update to [The Minitest Cookbook](http://chriskottom.com/minitestcookbook/) sometime before the end of the year (which will be freely available to those of you who've already purchased the book), and all of these changes will figure prominently in the new version.  In the meantime though, I'll be trying to work them into my coding to see which ones produce changes in how I work and which ones are less important.
-
-{% include mailchimp/minitest_after_post3.html %}

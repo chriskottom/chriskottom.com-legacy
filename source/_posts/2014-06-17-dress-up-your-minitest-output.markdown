@@ -81,8 +81,6 @@ Minitest::Reporters.use! [Minitest::Reporters::AwesomeReporter.new(reporter_opti
 
 Well, at least it's readable against the background.  I'm still probably going to tweak the color settings in my terminal.  :)
 
-{% include minitest_cookbook_plug2.html %}
-
 Finally, it would be nice, especially as the test suite grows and I add more and more extensive integration and acceptance tests, to provide an immmediate indication when a test runs longer than a certain threshold time.  The way that DefaultReporter is currently implemented doesn't really lend itself to making the kind of change I have in mind, so I've created my own [fork][5] of the gem and submitted a pull request that provides an easier way change the output for successful, failed, and skipped tests.  I'll just replace the Gemfile entry I added previously and have it point to my own repo and branch like so.  (See update at the end of this post.)
 
 {% codeblock lang:ruby Gemfile %}
@@ -144,8 +142,6 @@ We end up with testing output that says a lot about the current state of the app
 gem 'minitest', group: :test
 gem 'minitest-reporters', git: 'git@github.com:kern/minitest-reporters.git', group: :test
 {% endcodeblock %}
-
-{% include mailchimp/minitest_after_post3.html %}
 
 [1]: http://rspec.info/
 [2]: https://github.com/seattlerb/minitest

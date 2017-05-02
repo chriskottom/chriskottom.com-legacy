@@ -116,7 +116,3 @@ end
 {% endcodeblock %}
 
 As Rails applications have grown and matured, we've asked them to do more complete and weighty tasks, and background jobs have been a necessity to keep the web application side of things responsive and zippy.  But in a lot of cases, developers simply dump code into workers and call it a day.  Just by following a few common-sense patterns, you can keep the back side of your code as neat and well-ordered as the front.
-
-{% include mailchimp/minitest_after_post_rails.html %}
-
-

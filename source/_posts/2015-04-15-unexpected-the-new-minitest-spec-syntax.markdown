@@ -144,5 +144,3 @@ Whether you're using the new syntax or the old though, the underlying implementa
 * [Added Minitest::Expectation value monad.](https://github.com/seattlerb/minitest/commit/9e78cc974f3ef0d9716f1cca2675753cf5f648d0) - the GitHub commit reference introducing the new syntax
 * [Great Expectations](http://blog.zenspider.com/blog/2015/04/great-expectations.html) - Ryan Davis' blog post about the new syntax
 * [The Big Lebowski](http://www.imdb.com/title/tt0118715/) - You haven't seen this!?!  Stop whatever you're doing and go watch it.
-
-{% include mailchimp/minitest_after_post3.html %}

@@ -126,5 +126,3 @@ Hopefully that explains a little better about Minitest::Benchmark and what it mi
 * [Regression analysis](https://en.wikipedia.org/wiki/Regression_analysis)
 * [Coefficient of determination](https://en.wikipedia.org/wiki/Coefficient_of_determination)
 * [Ruby Benchmarking & Complexity](http://www.revision-zero.org/benchmarking) - one of the only detailed technical articles I found on Minitest::Benchmark
-
-{% include mailchimp/minitest_after_post3.html %}

@@ -230,5 +230,3 @@ As a rule, I think it's a good policy to run unit-level tests (models, controlle
 {% codeblock %}
 chris@erdos:~/Projects/tiny_projects/blogg > rails test test/
 {% endcodeblock %}
-
-{% include mailchimp/minitest_after_post3.html %}

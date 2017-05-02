@@ -100,8 +100,6 @@ Next, It uses a ```class_eval``` block called on the target to define a new meth
 
 Between the case statement and the way that the new method's arguments are passed to the underlying assertion, there are four common cases that are handled.
 
-{% include minitest_cookbook_plug2.html %}
-
 ### Binary expectations ###
 
 This is what we've utilized with our example code above thanks to: ```Minitest::Spec.current.#{meth}(args.first, self, *args[1..-1])```
@@ -123,8 +121,6 @@ In certain cases, the relationship between the arguments to the assertion is not
 ### Unary expectations ###
 
 A special case of the previous one occurs when we want to check a condition on the object under test instead of comparing or checking the relationship to something else.  A classic example would be if we wanted to check whether or not a User object is an administrator using a method like ```User.admin?```, but there are others.  These types of assertions involve calling a method on the actual object under test with no additional arguments which is the same as the reverse case except the ```*args``` passed to the assertion will just be empty or at most include just an optional message.  So in such cases, we'll want to pass a [truthy][5] third argument to ```infect_an_assertion``` - preferably one that indicates that the expectation takes no arguments like ```:unary``` or ```:single_and_loving_it```.
-
-{% include mailchimp/minitest_after_post3.html %}
 
 [1]: https://github.com/seattlerb/minitest
 [2]: https://github.com/seattlerb/minitest/blob/master/lib/minitest/spec.rb

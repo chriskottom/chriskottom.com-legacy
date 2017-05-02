@@ -44,8 +44,6 @@ No computer system is completely secure, but if you're shipping web applications
 
 {% img center /images/brakeman.png 700 Brakeman report %}
 
-{% include minitest_cookbook_plug3.html %}
-
 ## Performance and Efficiency ##
 
 Everyone knows that performance is important, but it's a quality factor that often gets ignored until after a feature (or sometimes a whole application) ships.  Knowing where your application spends its time gives you insight into how you can make it faster.  I'm a huge fan of [New Relic](https://newrelic.com/) for active application profiling, but it's a product that's priced for the enterprise and not individual developers and small companies (even though the free tier is still pretty awesome).
@@ -92,5 +90,3 @@ If you're in a Rails project, you've got this already by running `rake stats`.  
 A word of caution: what they say about [whatever gets measured gets optimized](http://c2.com/cgi/wiki?WhateverGetsMeasuredGetsOptimized) is true in my experience.  When you're using tools that are able to look at a large, complex codebase and boil its goodness or badness down to a single number of letter grade, it's tempting to shut off the critical thinking part of your brain.  When you do that, you've stopped writing programs for people and started writing them for other programs.  Now there's a depressing thought.
 
 Don't follow the numbers blindly.  You know your code better than the tool does, but let the feedback they give you inform and influence your work to make it better.
-
-{% include mailchimp/minitest_after_post3.html %}
