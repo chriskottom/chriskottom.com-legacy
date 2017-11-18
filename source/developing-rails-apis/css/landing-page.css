@@ -22,7 +22,7 @@ h6 {
 }
 
 .topnav {
-  font-size: 14px; 
+  font-size: 14px;
 }
 
 .lead {
@@ -138,7 +138,7 @@ h6 {
   clear: left;
   font-size: 20px;
   font-weight: 400;
-  
+
 }
 
 .btn-desc .highlight {
@@ -225,4 +225,21 @@ footer {
 
 p.copyright {
   margin: 15px 0 0;
+}
+
+
+body .drip-lightbox.drip-in {
+  font-weight: 400;
+}
+
+body .drip-lightbox.drip-in .drip-description {
+  line-height: 1.5
+}
+
+body .drip-lightbox.drip-in .drip-description p {
+  margin-bottom: 7px;
+}
+
+body .drip-lightbox.drip-in .drip-description ul {
+  margin-left: 0;
 }
