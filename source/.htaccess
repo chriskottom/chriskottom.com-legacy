@@ -11,6 +11,7 @@ RedirectMatch   301   ^\/blog\/2015\/09\/rails\-not\-as\-shiny\-still\-pretty\-a
 RedirectMatch   301   ^\/developing-rails-apis$ /developing-rails-apis/
 
 RedirectMatch   301   ^\/products\/(.*)$ /$1
+RedirectMatch   301   ^\/hire-me\/(.*)$ /services/
 
 ### CACHING ###
 ExpiresActive On
