@@ -166,54 +166,53 @@ h6 {
   width: 200px;
   border-top: 3px solid #e7e7e7;
 }
-
-.banner {
+.doormat {
   padding: 100px 0;
   color: #f8f8f8;
   background: url(/images/minitest_cookbook_code_bg.png) no-repeat center center;
   background-size: cover;
 }
 
-.banner h2 {
+.doormat h2 {
   margin: 0;
   text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
   font-size: 3em;
 }
 
-.banner ul {
+.doormat ul {
   margin-bottom: 0;
 }
 
-.banner-social-buttons {
+.doormat-social-buttons {
   float: right;
   margin-top: 0;
 }
 
-.banner-social-buttons li {
+.doormat-social-buttons li {
   margin-top: 5px;
 }
 
 @media(max-width:1199px) {
-  ul.banner-social-buttons {
+  ul.doormat-social-buttons {
     float: left;
     margin-top: 15px;
   }
 }
 
 @media(max-width:767px) {
-  .banner h2 {
+  .doormat h2 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 3em;
   }
 
-  ul.banner-social-buttons > li {
+  ul.doormat-social-buttons > li {
     display: block;
     margin-bottom: 20px;
     padding: 0;
   }
 
-  ul.banner-social-buttons > li:last-child {
+  ul.doormat-social-buttons > li:last-child {
     margin-bottom: 0;
   }
 }
@@ -242,4 +241,17 @@ body .drip-lightbox.drip-in .drip-description p {
 
 body .drip-lightbox.drip-in .drip-description ul {
   margin-left: 0;
+}
+
+body #lead .banner {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fafafa;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 2.5;
+  overflow-x: hidden;
+  -webkit-box-shadow: 0 0 5px black;
+  -moz-box-shadow:    0 0 5px black;
+  box-shadow:         0 0 5px black;
+  border-bottom: 1px solid #303030;
 }

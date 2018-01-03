@@ -1,0 +1,84 @@
+<script>
+ function findCountryDiscount(countryCode) {
+   var discount = country_discounts[countryCode];
+   return ( !!discount ? discount : undefined );
+ }
+
+ function getRegularPrice() {
+   var price = $('.buy-button a').data('regular-price-usd');
+   if( !!price ) {
+     price = parseFloat(price);
+     return price;
+   }
+   else {
+     return null;
+   }
+ }
+
+ function getDiscountPrice(discount, price) {
+   if( !!discount && !!price ) {
+     return (1.0 - discount) * price;
+   }
+   else {
+     return price;
+   }
+ }
+
+ function formatAsPriceString(price) {
+   return price.toLocaleString('en-US', {
+     style: 'currency',
+     currency: 'USD'
+   }).replace(/\.00$/, '');
+ }
+
+ function updateDisplayPricing(regularPrice, discountPrice) {
+   var newCta = 'Buy Now for <s>' + regularPrice + '</s> ' + discountPrice;
+   $('.buy-button a.btn small').html( unescape(newCta) );
+ }
+
+ function addDiscountCodeToGumroadLink(code) {
+   $('.buy-button a.btn').each(function() {
+     var originalUrl = $( this ).attr('href');
+     if( !!originalUrl && !!code ) {
+       var newUrl = originalUrl + '/' + code;
+       $( this ).attr('href', newUrl);
+     }
+   });
+ }
+
+ function displayDiscountBanner(countryName, discount) {
+   var bannerEl = $('#lead .banner');
+   if( bannerEl.length != 0 ) {
+     var discountString = '' + (discount * 100.0).toFixed(0) + '%';
+     var bannerMessage = '<b>Special Offer:</b> ' + discountString +
+			 ' off for visitors from ' + countryName + '!';
+     bannerEl.html(bannerMessage);
+     bannerEl.delay(3000).slideDown('fast');
+   }
+ }
+
+ $( document ).ready(function() {
+   $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+     var discount = findCountryDiscount(data['country_code']);
+     console.log('Discount code: ' + discount.code);
+     console.log('Discount rate: ' + (discount.rate * 100) + '%');
+     if( !discount ) {
+       return;
+     }
+
+     var regularPrice = getRegularPrice();
+     var regularPriceString = formatAsPriceString(regularPrice);
+     console.log("Regular price: " + regularPrice);
+     console.log("Regular price string: " + regularPriceString);
+
+     var discountPrice = getDiscountPrice(discount.rate, regularPrice);
+     var discountPriceString = formatAsPriceString(discountPrice);
+     console.log('Discounted price: ' + discountPrice);
+     console.log('Discounted price string: ' + discountPriceString);
+
+     updateDisplayPricing(regularPriceString, discountPriceString);
+     addDiscountCodeToGumroadLink(discount.code);
+     displayDiscountBanner(data.country_name, discount.rate);
+   });
+ });
+</script>

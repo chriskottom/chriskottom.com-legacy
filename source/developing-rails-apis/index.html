@@ -53,7 +53,9 @@ date: 2017-04-10 17:23
 
     <!-- Header -->
     <a name="about"></a>
-    <div class="intro-header">
+    <div id="lead" class="intro-header">
+      <div class="banner navbar-fixed-top" style="display: none"></div>
+
       <div class="container">
 
 	<div class="row">
@@ -188,7 +190,7 @@ date: 2017-04-10 17:23
     <!-- /.content-section-a -->
 
     <a  name="contact"></a>
-    <div class="banner">
+    <div class="doormat">
 
       <div class="container">
 
@@ -222,7 +224,15 @@ date: 2017-04-10 17:23
     <script src="js/bootstrap.min.js"></script>
 
     {% include drip.html %}
-
+    {% include developing_rails_apis/discounts.html %}
+    {% include dynamic_discount.html %}
+    <script>
+     function updateDisplayPricing(regularPrice, discountPrice) {
+       var newCta = 'Download as a PDF <u>right now</u> for <s>' +
+		    regularPrice + '</s> ' + discountPrice;
+       $('.buy-button a.btn .btn-desc').html( unescape(newCta) );
+     }
+    </script>
   </body>
 
 </html>
